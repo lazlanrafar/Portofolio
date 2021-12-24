@@ -11,6 +11,7 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "animejs": "^3.2.1",
     "core-js": "^3.6.5",
+    "TagCloud": "^2.2.0",
     "vue": "^2.6.11",
     "vue-router": "^3.5.3",
     "vuex": "^3.6.2"

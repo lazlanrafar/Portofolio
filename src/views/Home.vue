@@ -2,98 +2,59 @@
   <div class="home">
     <div class="container">
       <div class="text">
+        <i class="code">h1</i>
         <h1>
-          <span class="hov">H</span>
-          <span class="hov">i</span>
-          <span class="hov">,</span>
+          <span>H</span>
+          <span>i</span>
+          <span>,</span>
         </h1>
         <h1>
-          <span class="hov">I</span>
-          <span class="hov">'</span>
-          <span class="hov">m</span>
+          <span>I</span>
+          <span>'</span>
+          <span>m</span>
           <span class="space"></span>
-          <span class="hov">L</span>
-          <span class="hov">a</span>
-          <span class="hov">t</span>
-          <span class="hov">o</span>
-          <span class="hov">e</span>
-          <span class="hov">,</span>
+          <span style="color: var(--red-color)">L</span>
+          <span>a</span>
+          <span>t</span>
+          <span>o</span>
+          <span>e</span>
+          <span>,</span>
         </h1>
 
         <h1 class="bottom-text">
-          <span class="hov">W</span>
-          <span class="hov">e</span>
-          <span class="hov">b</span>
+          <span>W</span>
+          <span>e</span>
+          <span>b</span>
           <span class="space"></span>
-          <span class="hov">D</span>
-          <span class="hov">e</span>
-          <span class="hov">v</span>
-          <span class="hov">e</span>
-          <span class="hov">l</span>
+          <span>D</span>
+          <span>e</span>
+          <span>v</span>
+          <span>e</span>
+          <span>l</span>
           <div class="right">
             <div class="pupil">
               <div class="light"></div>
             </div>
           </div>
-          <span class="hov">p</span>
-          <span class="hov">e</span>
-          <span class="hov">r</span>
-          <span class="hov">.</span>
+          <span>p</span>
+          <span>e</span>
+          <span>r</span>
+          <span>.</span>
+          <span class="space"></span>
+          <span class="space"></span>
+          <i class="code">/h1</i>
         </h1>
         <div class="deks">
+          <i class="code">p</i>
           <p>Front End Developer</p>
+          <i class="code">/p</i>
         </div>
         <!-- <div class="cursor"></div> -->
         <div @click="menuBackgroundAnim(1)" ref="btn" class="btn">
           <router-link class="contact-btn" to="/about">
-            about me
-            <span class="btn-arrow">
-              <i class="fas fa-arrow-right"></i>
-            </span>
+            <span>Contact me!</span>
           </router-link>
         </div>
-      </div>
-      <div class="logo-con">
-        <!-- <div class="circle"></div> -->
-        <svg
-          id="Layer_1"
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 316.03 529.14"
-        >
-          <title>logo</title>
-          <path
-            d="M165.46,395.67c96.3,71,209.48,9.73,219.92-87.47a134.32,134.32,0,0,0,.67-19.17l.27.24-16.95-187c-.6-6.6-10-7.17-11.42-.68l-11.31,53c-3.6,16.89-21.92,26.37-37.61,19.16a132.18,132.18,0,0,0-41.16-11.31C170.66,152,86.73,249.55,135.69,358.73A93.44,93.44,0,0,0,165.46,395.67Zm45.82-165.79c81.85-42.7,155.26,48.37,96.15,119.28a36.78,36.78,0,0,1-11.25,9.08C214.33,400.94,140.92,309.86,200,239A36.89,36.89,0,0,1,211.28,229.88Z"
-            transform="translate(-73.96 -94)"
-            style="
-              fill: none;
-              stroke: #272727;
-              stroke-miterlimit: 10;
-              stroke-width: 6px;
-            "
-          />
-          <path
-            id="test"
-            d="M145.34,481.9a31,31,0,0,0-32.7,21,34.21,34.21,0,0,0-2.5,9.69l-9.58,89.14a6.16,6.16,0,0,0,11.52,3.63L138.78,557a27.77,27.77,0,0,1,27.28-14.2L299.94,557.2a58.36,58.36,0,0,0,64.26-51.8h0Z"
-            transform="translate(-73.96 -94)"
-            style="
-              fill: none;
-              stroke: #272727;
-              stroke-miterlimit: 10;
-              stroke-width: 6px;
-            "
-          />
-          <path
-            d="M138.9,410.21c96.3,71,209.47,9.73,219.91-87.47a131.45,131.45,0,0,0,.67-19.17l.28.24-17-187c-.59-6.6-10-7.17-11.41-.68l-11.31,53c-3.61,16.89-21.93,26.37-37.62,19.16A132,132,0,0,0,241.3,177c-97.2-10.44-181.13,87.14-132.17,196.33A93.39,93.39,0,0,0,138.9,410.21Zm45.82-165.79c81.84-42.7,155.25,48.37,96.15,119.28a36.81,36.81,0,0,1-11.26,9.08c-81.84,42.7-155.25-48.38-96.15-119.29A37,37,0,0,1,184.72,244.42Z"
-            transform="translate(-73.96 -94)"
-            style="fill: #272727"
-          />
-          <path
-            d="M118.78,496.44a31,31,0,0,0-32.7,21,34.22,34.22,0,0,0-2.51,9.69L74,616.31c-.72,6.68,8.27,9.52,11.52,3.63l26.69-48.38a27.8,27.8,0,0,1,27.29-14.2l133.87,14.38a58.38,58.38,0,0,0,64.27-51.8h0Z"
-            transform="translate(-73.96 -94)"
-            style="fill: #272727"
-          />
-        </svg>
       </div>
     </div>
   </div>
@@ -109,7 +70,18 @@ export default {
       isBoxSupport: true,
     };
   },
-
+  methods: {
+    menuBackgroundAnim(index) {
+      let navList = this.$store.state.navList;
+      this.$store.state.lastVisitedPage.classList.remove("active");
+      this.$store.state.lastVisitedPage = navList.children[index + 1];
+      navList.children[index + 1].classList.add("active");
+      navList.children[index + 1].children[0].classList.add("active");
+      navList.children[0].style.transform = `translateY(${
+        index * this.$store.state.menuListHeight
+      }px)`;
+    },
+  },
   mounted() {
     this.$store.state.hover.push(this.$refs.btn);
 
@@ -134,5 +106,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/styles/home.scss";
+@import "@/assets/css/home.scss";
 </style>

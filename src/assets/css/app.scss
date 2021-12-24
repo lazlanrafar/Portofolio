@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --main-color: #1d1d1d;
+  --second-color: #181818;
+  --font-color: #fff;
+  --red-color: #dc3545;
+  --muted-color: #515151;
+}
+
+body {
+  overflow: hidden;
+  background-color: var(--main-color);
+}
+
+.top {
+  position: fixed;
+  top: 20px;
+  left: 80px;
+  z-index: 8;
+  font-size: 24px;
+  color: var(--second-color);
+}
+
+.bottom {
+  display: flex;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 8;
+  font-size: 24px;
+  color: var(--second-color);
+}
+.contact-btn:hover .cursor {
+  border: 1px solid red;
+}
+
+.fa-slash {
+  transform: rotateZ(70deg);
+  margin-right: -10px;
+}
+
+.fa-less-than,
+.fa-slash,
+.fa-greater-than {
+  color: var(--font-color);
+}
+
+.view {
+  width: 100%;
+  background-color: var(--main-color);
+  padding-left: 50px;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+}
+
+#app {
+  display: flex;
+  background-color: var(--main-color);
+  justify-content: space-between;
+  overflow-x: hidden;
+  /* border: 1px solid red; */
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--second-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--second-color);
+}
+
+.code {
+  content: "<h1>";
+  font-size: 1rem;
+  font-family: "La Belle Aurore", cursive;
+  position: relative;
+  user-select: none;
+  color: var(--muted-color);
+
+  &::before {
+    content: "<";
+    margin-left: -1em;
+  }
+
+  &::after {
+    content: ">";
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .view {
+    margin: 0px 0 0 0px;
+    padding-left: 0;
+    height: calc(100vh - 80px);
+  }
+  .symbols {
+    display: none;
+  }
+
+  #app {
+    display: block;
+  }
+}
