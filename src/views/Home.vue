@@ -13,7 +13,7 @@
           <span>'</span>
           <span>m</span>
           <span class="space"></span>
-          <span style="color: var(--red-color)">L</span>
+          <span>L</span>
           <span>a</span>
           <span>t</span>
           <span>o</span>

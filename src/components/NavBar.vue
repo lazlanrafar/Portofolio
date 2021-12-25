@@ -20,13 +20,13 @@
           </router-link>
         </div>
 
-        <div class="skills list" @click="menuBackgroundAnim(2)">
-          <router-link to="/skills" data-content="Skills">
-            <i class="fas fa-tools"></i>
+        <div class="porto list" @click="menuBackgroundAnim(2)">
+          <router-link to="/work" data-content="Work">
+            <i class="fas fa-project-diagram"></i>
           </router-link>
         </div>
-        <div class="work list" @click="menuBackgroundAnim(3)">
-          <router-link to="/work" data-content="My Work">
+        <div class="Blog list" @click="menuBackgroundAnim(3)">
+          <router-link to="/Blog" data-content="Blog">
             <i class="fas fa-eye"></i>
           </router-link>
         </div>

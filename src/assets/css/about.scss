@@ -16,7 +16,6 @@
       margin-left: 40px;
       font-size: 1.5vw;
       color: var(--font-color);
-      letter-spacing: 2px;
       width: 25em;
 
       h1 {
@@ -24,6 +23,7 @@
           width: auto;
           transition: all 0.4s ease;
           display: inline-block;
+          color: var(--red-color);
         }
 
         span:hover {
@@ -35,13 +35,14 @@
         }
       }
       .deks {
-        font-size: 0.8rem;
+        font-size: 1rem;
       }
     }
     .global {
       margin: 0 auto;
       font-weight: 600;
       color: var(--font-color);
+      user-select: none;
     }
   }
 }

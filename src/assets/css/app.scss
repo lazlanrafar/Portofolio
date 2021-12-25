@@ -41,9 +41,6 @@ body {
   font-size: 24px;
   color: var(--second-color);
 }
-.contact-btn:hover .cursor {
-  border: 1px solid red;
-}
 
 .fa-slash {
   transform: rotateZ(70deg);
@@ -74,12 +71,13 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 10px;
+  border-radius: 50%;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
 }
 
 /* Handle */

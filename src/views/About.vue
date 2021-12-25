@@ -53,8 +53,9 @@ export default {
   },
   mounted() {
     const container = this.$refs.skill;
-    var x = window.matchMedia("(max-width: 550px)");
-    let radius = 350;
+    var x = window.matchMedia("(max-width: 900px)");
+    let radius = 320;
+
     if (x.matches) {
       radius = 200;
     }
