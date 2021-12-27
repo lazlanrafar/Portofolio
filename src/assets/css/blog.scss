@@ -5,6 +5,16 @@
     font-family: "Montserrat", sans-serif;
     color: var(--red-color);
     font-size: 3rem;
+
+    &::after {
+      content: "My Blog";
+      left: 10vw;
+      top: 27vh;
+      font-size: 4rem;
+      opacity: 0.2;
+      font-weight: 900;
+      position: absolute;
+    }
   }
 
   .blog-list {
@@ -20,7 +30,6 @@
         .title a {
           color: var(--red-color);
           text-decoration: none;
-          margin-bottom: 1rem !important;
         }
         .desc {
           color: rgb(182, 182, 182);
@@ -48,6 +57,10 @@ span.hov:hover {
   .blog-page {
     .title-page {
       font-size: 2rem;
+
+      &::after {
+        top: 10vh;
+      }
     }
     .blog-list {
       margin-top: 0;

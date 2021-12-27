@@ -17,11 +17,16 @@
     <div class="work-list">
       <div class="work" v-for="work in myProjects" :key="work.key">
         <div class="information">
+          <span class="code">h1</span>
           <h2 class="work-number">0{{ work.key }}.</h2>
           <h1 class="work-title">
             {{ work.title }}
+            <span class="space"></span>
+            <span class="space"></span>
+            <span class="code">/h1</span>
           </h1>
           <img :src="work.img" alt="" class="mobile-img" />
+          <span class="code">p</span>
           <p class="description">
             {{ work.description }}
           </p>
@@ -34,6 +39,7 @@
               Design : <span>{{ work.design }}</span>
             </p>
           </div>
+          <span class="code">/p</span>
           <div class="links">
             <a
               target="_blank"

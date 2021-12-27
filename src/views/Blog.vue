@@ -13,6 +13,7 @@
     <div class="blog-list">
       <div class="articles">
         <article v-for="article in articles" v-bind:key="article.id">
+          <span class="code">article</span>
           <h3 class="title">
             <router-link to="#">
               {{ article.title }}
@@ -21,6 +22,7 @@
           <p class="desc">
             {{ article.description }}
           </p>
+          <span class="code">/article</span>
         </article>
       </div>
     </div>
