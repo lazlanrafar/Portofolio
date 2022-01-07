@@ -23,9 +23,9 @@
         <div class="deks">
           <i class="code">p</i>
           <p style="margin-bottom: 1rem">
-            My name is Azlan Rafar I'm a Full Stack Web Developer based in
-            Indonesia. I describe myself as a passionate developer who loves
-            coding, open source, and the web platform.
+            Hii I'm a Full Stack Web Developer based in Indonesia. I describe
+            myself as a passionate developer who loves coding, open source, and
+            the web platform.
           </p>
           <p>
             Aside from my job, I like to create and contribute to open source
