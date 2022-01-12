@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import Project from "@/store/Project";
 
 Vue.use(Vuex);
 
@@ -8,9 +9,10 @@ export default new Vuex.Store({
     hover: [],
     backgroundTransition: null,
     lastVisitedPage: null,
-    aboutPageIcon: null,
-    menuBag: null,
     menuListHeight: 0,
     navList: null,
+  },
+  modules: {
+    Project,
   },
 });

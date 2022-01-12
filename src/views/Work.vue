@@ -45,14 +45,9 @@
               target="_blank"
               :href="work.link"
               :class="work.link === '' ? 'disabled' : ''"
-              >Visit</a
             >
-            <a
-              target="_blank"
-              :href="work.source"
-              :class="work.source === '' ? 'disabled' : ''"
-              >Source Code</a
-            >
+              Visit Now <i class="fas fa-external-link-square-alt"></i>
+            </a>
           </div>
         </div>
         <div class="img">
@@ -81,17 +76,6 @@ export default {
           design: "Design by Faris Azizy",
           img: "https://gunawanahmad.github.io/img/kliniku.5888c118.svg",
           key: 1,
-        },
-        {
-          title: "Web Application for Online Consultation (Kliniku)",
-          description:
-            "Kliniku is an online consultation platform where people can fill in an online form about their health issue to send for a doctor. The doctor can respond and give them medical advice.",
-          source: "https://github.com/GunawanAhmad/Sisfo-Klinik-Full-Stack",
-          link: "",
-          codeTools: ["VueJS", "MongoDB", "NodeJs", "ExpressJS"],
-          design: "Design by Faris Azizy",
-          img: "https://gunawanahmad.github.io/img/kliniku.5888c118.svg",
-          key: 2,
         },
       ],
     };

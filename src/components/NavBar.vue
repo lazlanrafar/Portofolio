@@ -3,7 +3,7 @@
     <nav>
       <div class="logo">La.</div>
       <div class="direct" ref="navList">
-        <div class="active-back" ref="menuBag">
+        <div class="active-back">
           <span class="top-white"></span>
           <span class="top-black"></span>
           <span class="bot-white"></span>
@@ -25,9 +25,9 @@
             <i class="fas fa-project-diagram"></i>
           </router-link>
         </div>
-        <div class="Blog list" @click="menuBackgroundAnim(3)">
-          <router-link to="/Blog" data-content="Blog">
-            <i class="fas fa-eye"></i>
+        <div class="Project list" @click="menuBackgroundAnim(3)">
+          <router-link to="/project" data-content="Project">
+            <i class="fas fa-mug-hot"></i>
           </router-link>
         </div>
         <div class="contact list" @click="menuBackgroundAnim(4)">

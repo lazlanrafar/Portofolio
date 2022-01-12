@@ -3,7 +3,8 @@ import VueRouter from "vue-router";
 import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
 import Work from "@/views/Work.vue";
-import Blog from "@/views/Blog.vue";
+import Project from "@/views/Project.vue";
+import ProjectDetail from "@/components/detailProject.vue";
 
 Vue.use(VueRouter);
 
@@ -24,9 +25,14 @@ const routes = [
     component: Work,
   },
   {
-    path: "/blog",
-    name: "Blog Page",
-    component: Blog,
+    path: "/project",
+    name: "Project Page",
+    component: Project,
+  },
+  {
+    path: "/project/:id",
+    name: "Detail Project",
+    component: ProjectDetail,
   },
 ];
 
