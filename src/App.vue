@@ -23,7 +23,7 @@
 export default {
   name: "App",
   components: {
-    NavBar: () => import("@/components/NavBar.vue"),
+    NavBar: () => import("@/components/atoms/NavBar.vue"),
   },
 };
 </script>

@@ -11,6 +11,7 @@
       <span class="hov">e</span>
       <span class="hov">c</span>
       <span class="hov">t</span>
+      <span class="hov">s</span>
     </h1>
 
     <ul class="cetegory">

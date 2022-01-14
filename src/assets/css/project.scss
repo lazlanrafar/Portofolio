@@ -43,20 +43,21 @@
   .wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: start;
     margin: 2rem auto;
     width: 90%;
     height: 100%;
 
     .card {
       text-decoration: none;
-      margin-top: 2rem;
+      width: calc(92% / 4);
+      margin: 1%;
 
       .image {
         position: relative;
         img {
+          width: 100%;
           border-radius: 10px;
-          width: 20vw;
         }
         .content {
           display: none;
@@ -92,10 +93,8 @@
 @media only screen and (max-width: 1024px) {
   .wrapper {
     .card {
+      width: calc(92% / 3) !important;
       .image {
-        img {
-          width: 28vw !important;
-        }
         .content {
           height: 50% !important;
         }
@@ -107,10 +106,8 @@
 @media only screen and (max-width: 600px) {
   .wrapper {
     .card {
+      width: 100% !important;
       .image {
-        img {
-          width: 92vw !important;
-        }
         .content {
           height: 35% !important;
         }
