@@ -6,11 +6,12 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    hover: [],
-    backgroundTransition: null,
-    lastVisitedPage: null,
-    menuListHeight: 0,
-    navList: null,
+    navActive: "",
+  },
+  mutations: {
+    SET_NAVBAR_ACTIVE(state, payload) {
+      state.navActive = payload;
+    },
   },
   modules: {
     Project,

@@ -1,18 +1,6 @@
 <template>
   <div class="work-page">
-    <h1 class="title-page">
-      <span class="hov">M</span>
-      <span class="hov">y</span>
-      <span class="space"></span>
-      <span class="hov">p</span>
-      <span class="hov">r</span>
-      <span class="hov">o</span>
-      <span class="hov">j</span>
-      <span class="hov">e</span>
-      <span class="hov">c</span>
-      <span class="hov">t</span>
-      <span class="hov">s</span>
-    </h1>
+    <header-text text="My Work" class="title"></header-text>
 
     <div class="work-list">
       <div class="work" v-for="work in myProjects" :key="work.key">
@@ -60,6 +48,10 @@
 
 <script>
 export default {
+  name: "WorkPage",
+  components: {
+    HeaderText: () => import("@/components/atoms/HeaderText"),
+  },
   data() {
     return {
       isExpand: false,

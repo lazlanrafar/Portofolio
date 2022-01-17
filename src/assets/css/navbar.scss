@@ -4,80 +4,71 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  font-size: 3vh;
+  font-size: calc(var(--size-navbar) / 3);
   position: fixed;
   left: 0;
   top: 0;
-  width: 2.5vw;
-  min-width: 60px;
-  max-width: 150px;
-  z-index: 100;
+  width: var(--size-navbar);
+  z-index: 9999;
   background-color: var(--second-color);
   padding: 40px 0;
-  font-family: "Montserrat", sans-serif;
-}
 
-.direct {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
+  .logo {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
-.direct .list {
-  background: transparent;
-  height: 60px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 999;
-}
+  .nav-menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 
-.direct > div a {
-  height: 100%;
-  width: 100%;
-}
+    .list {
+      background: transparent;
+      height: var(--size-navbar);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 999;
 
-.direct > div svg {
-  pointer-events: none;
-}
+      a {
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+        color: var(--font-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-.logo {
-  z-index: 99;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
+        &:hover::after {
+          content: attr(data-content);
+          pointer-events: none;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          display: grid;
+          place-content: center;
+          background-color: inherit;
+          color: inherit;
+          font-size: 2vh;
+          animation: fade 150ms ease-in-out alternate;
+          z-index: 999;
+        }
+      }
 
-a:hover:after {
-  content: attr(data-content);
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: grid;
-  place-content: center;
-  background-color: inherit;
-  color: inherit;
-  font-size: 2vh;
-  animation: fade 150ms ease-in-out alternate;
-  z-index: 999;
-}
-
-.list:hover svg {
-  opacity: 0;
-}
-
-a {
-  text-decoration: none;
-  color: var(--font-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+      &:hover {
+        svg {
+          opacity: 0;
+        }
+      }
+    }
+  }
 }
 
 .active-back {
@@ -85,45 +76,45 @@ a {
   width: 100%;
   background-color: var(--main-color);
   top: 0;
-  height: 60px;
+  height: var(--size-navbar);
   z-index: 90;
   transform: translateY(0px);
   /* display: none; */
   transition: transform 250ms ease;
-}
 
-.active-back .top-white {
-  position: absolute;
-  bottom: 100%;
-  background-color: var(--main-color);
-  height: 30px;
-  width: 100%;
-}
+  .top-white {
+    position: absolute;
+    bottom: 100%;
+    background-color: var(--main-color);
+    height: calc(var(--size-navbar) / 2);
+    width: 100%;
+  }
 
-.active-back .top-black {
-  position: absolute;
-  bottom: 100%;
-  background-color: var(--second-color);
-  width: 100%;
-  height: 30px;
-  border-bottom-right-radius: 20px;
-}
+  .top-black {
+    position: absolute;
+    bottom: 100%;
+    background-color: var(--second-color);
+    width: 100%;
+    height: calc(var(--size-navbar) / 2);
+    border-bottom-right-radius: 20px;
+  }
 
-.active-back .bot-white {
-  position: absolute;
-  top: 100%;
-  background-color: var(--main-color);
-  height: 30px;
-  width: 100%;
-}
+  .bot-white {
+    position: absolute;
+    top: 100%;
+    background-color: var(--main-color);
+    height: calc(var(--size-navbar) / 2);
+    width: 100%;
+  }
 
-.active-back .bot-black {
-  position: absolute;
-  top: 100%;
-  background-color: var(--second-color);
-  width: 100%;
-  height: 30px;
-  border-top-right-radius: 20px;
+  .bot-black {
+    position: absolute;
+    top: 100%;
+    background-color: var(--second-color);
+    width: 100%;
+    height: calc(var(--size-navbar) / 2);
+    border-top-right-radius: 20px;
+  }
 }
 
 @keyframes fade {
@@ -140,17 +131,20 @@ a {
   nav {
     width: 100%;
     max-width: 100vw;
-    height: 80px;
-    flex-direction: row;
+    bottom: 0 !important;
+    top: auto !important;
+    position: fixed !important;
+    height: var(--size-navbar-mobile);
+    flex-direction: row !important;
     padding: 0 2rem;
     justify-content: center;
-    position: relative;
+    font-size: 1.3rem !important;
   }
-  .direct {
-    flex-direction: row;
+  .nav-menu {
+    flex-direction: row !important;
     justify-content: center;
   }
-  .direct > div {
+  .nav-menu > div {
     margin: 0 2rem;
   }
 
@@ -168,11 +162,11 @@ a {
     display: none;
   }
 
-  .direct {
+  .nav-menu {
     justify-content: space-between;
   }
 
-  .direct > div {
+  .nav-menu > div {
     margin: 0;
   }
 }

@@ -14,6 +14,12 @@
   --font-color: #fff;
   --red-color: #dc3545;
   --muted-color: #515151;
+
+  --size-navbar: 4.5vw;
+  --size-navbar-mobile: 13vh;
+
+  --width-tablet: 1024px;
+  --width-phone: 600px;
 }
 
 body {
@@ -53,22 +59,23 @@ body {
   color: var(--font-color);
 }
 
-.view {
-  width: 100%;
-  background-color: var(--main-color);
-  padding-left: 50px;
-  height: 100vh;
-  position: relative;
-  overflow: auto;
-}
-
 #app {
   display: flex;
   background-color: var(--main-color);
   justify-content: space-between;
   overflow-x: hidden;
-  /* border: 1px solid red; */
+
+  .view {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--main-color);
+    padding-left: 70px;
+    position: relative;
+    overflow: auto;
+  }
 }
+
+// TODO : Custom ScrollBar
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -90,17 +97,18 @@ body {
   background: var(--second-color);
 }
 
+// TODO : Code HTML
+
 .code {
-  content: "<h1>";
   font-size: 1rem;
   font-family: "La Belle Aurore", cursive;
   position: relative;
   user-select: none;
   color: var(--muted-color);
+  margin-left: -1em;
 
   &::before {
     content: "<";
-    margin-left: -1em;
   }
 
   &::after {
@@ -108,14 +116,50 @@ body {
   }
 }
 
-.d-flex {
-  display: flex;
-  flex-wrap: wrap;
+.btn-primary {
+  border: 1px solid var(--red-color);
+  text-decoration: none;
+  font-size: 1vw;
+  padding: 0.7vw 1.5vw;
+  display: inline-block !important;
+  cursor: pointer;
+
+  overflow: hidden;
+  position: relative;
+
+  span {
+    transition: all 0.5s;
+    color: var(--red-color);
+    position: relative;
+    z-index: 2;
+  }
+
+  &::before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: -230%;
+    transform: skew(-30deg);
+    background: var(--red-color);
+    transition: all 0.5s;
+  }
+
+  &:hover {
+    &::before {
+      left: -15%;
+    }
+    span {
+      color: var(--font-color);
+    }
+  }
 }
+
 @media only screen and (max-width: 1024px) {
   .view {
-    margin: 0px 0 0 0px;
-    padding-left: 0;
+    padding-left: 0 !important;
     height: calc(100vh - 80px);
   }
   .symbols {

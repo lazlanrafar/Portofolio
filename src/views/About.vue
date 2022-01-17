@@ -2,23 +2,11 @@
   <div class="about">
     <div class="container">
       <div class="text">
-        <i class="code">h1</i>
-        <h1>
-          <span>M</span>
-          <span>y</span>
-          <span>,</span>
-          <span class="space"></span>
-          <span>M</span>
-          <span>y</span>
-          <span>s</span>
-          <span>e</span>
-          <span>l</span>
-          <span>f</span>
-          <span class="space"></span>
-          <span>&</span>
-          <span class="space"></span>
-          <span>I</span>
-        </h1>
+        <header-text
+          text="My,Myself & I"
+          class="title"
+          open="true"
+        ></header-text>
         <i class="code">/h1</i>
         <div class="deks">
           <i class="code">p</i>
@@ -46,6 +34,9 @@ import TagCloud from "TagCloud";
 
 export default {
   name: "About",
+  components: {
+    HeaderText: () => import("@/components/atoms/HeaderText"),
+  },
   data() {
     return {
       title: "MY, Myself & I",

@@ -26,8 +26,8 @@
           <i class="code" style="top: -20px">/p</i>
         </div>
         <div class="code" style="margin-top: -20px">form</div>
-        <form action="">
-          <div class="d-flex">
+        <form action="" autocomplete="off">
+          <div class="flex">
             <input type="text" name="name" placeholder="Name" class="double" />
             <input
               type="text"
@@ -40,7 +40,7 @@
             type="text"
             name="subject"
             placeholder="Subject"
-            class="single"
+            class="single flex"
           />
           <textarea
             name="field"
@@ -48,8 +48,11 @@
             cols="30"
             rows="5"
             placeholder="Message"
+            class="flex"
           ></textarea>
-          <button type="submit">Send Message</button>
+          <button type="submit" class="btn-primary">
+            <span>Send Message</span>
+          </button>
         </form>
         <div class="code">/form</div>
       </div>

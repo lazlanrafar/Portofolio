@@ -1,7 +1,7 @@
 .about {
   position: relative;
-  padding-left: 20px;
   height: 100%;
+  overflow-x: hidden;
 
   .container {
     display: flex;
@@ -10,30 +10,15 @@
     height: 100%;
 
     .text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
       margin-left: 40px;
       font-size: 1.5vw;
       color: var(--font-color);
       width: 25em;
 
-      h1 {
-        span {
-          width: auto;
-          transition: all 0.4s ease;
-          display: inline-block;
-          color: var(--red-color);
-        }
-
-        span:hover {
-          transform: rotateZ(-10deg) scale(1.2);
-        }
-
-        .space {
-          padding: 5px;
-        }
+      .title {
+        color: var(--red-color);
       }
+
       .deks {
         font-size: 1rem;
       }
@@ -47,7 +32,7 @@
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1024px) {
   .about {
     padding-left: 10px;
 
@@ -56,10 +41,6 @@
       margin-top: 3em;
       .text {
         width: 90vw;
-        h1 {
-          font-size: 8vw;
-          margin: -0.8rem 0;
-        }
       }
       .global {
         display: block;
@@ -71,15 +52,12 @@
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .about {
     .text {
       width: 80vw;
       margin-left: 2em !important;
 
-      h1 {
-        font-size: 9vw;
-      }
       .deks {
         font-size: 4vw;
       }
@@ -88,7 +66,8 @@
       position: relative;
       font-weight: 500;
       font-size: 1rem;
-      width: 100vw !important;
+      width: 10vw !important;
+      margin-left: -5vw !important;
     }
   }
 }

@@ -2,37 +2,22 @@
   <div class="navbar">
     <nav>
       <div class="logo">La.</div>
-      <div class="direct" ref="navList">
-        <div class="active-back">
+      <div class="nav-menu" ref="navList">
+        <div class="active-back" ref="activeBack">
           <span class="top-white"></span>
           <span class="top-black"></span>
           <span class="bot-white"></span>
           <span class="bot-black"></span>
         </div>
-        <div ref="size" class="home list" @click="menuBackgroundAnim(0)">
-          <router-link to="/" data-content="Home">
-            <i class="fas fa-home"></i>
-          </router-link>
-        </div>
-        <div class="profile list" @click="menuBackgroundAnim(1)">
-          <router-link to="/about" data-content="About">
-            <i class="fas fa-user"></i>
-          </router-link>
-        </div>
-
-        <div class="porto list" @click="menuBackgroundAnim(2)">
-          <router-link to="/work" data-content="Work">
-            <i class="fas fa-project-diagram"></i>
-          </router-link>
-        </div>
-        <div class="Project list" @click="menuBackgroundAnim(3)">
-          <router-link to="/project" data-content="Project">
-            <i class="fas fa-mug-hot"></i>
-          </router-link>
-        </div>
-        <div class="contact list" @click="menuBackgroundAnim(4)">
-          <router-link to="/contact" data-content="Contact">
-            <i class="fas fa-address-card"></i>
+        <div
+          v-for="(item, index) in navItem"
+          :key="index"
+          class="list"
+          :id="{ refNavItem: index == 0 }"
+          @click="setActive(index)"
+        >
+          <router-link :to="item.link" :data-content="item.title">
+            <i :class="item.icon"></i>
           </router-link>
         </div>
       </div>
@@ -45,26 +30,70 @@ export default {
   name: "NavBar",
   data() {
     return {
-      navListSize: 0,
+      navItem: [
+        {
+          title: "Home",
+          icon: "fas fa-home",
+          link: "/",
+          index: 0,
+        },
+        {
+          title: "About",
+          icon: "fas fa-user",
+          link: "/about",
+          index: 1,
+        },
+        {
+          title: "Work",
+          icon: "fas fa-project-diagram",
+          link: "/work",
+          index: 2,
+        },
+        {
+          title: "Project",
+          icon: "fas fa-mug-hot",
+          link: "/project",
+          index: 3,
+        },
+        {
+          title: "Contact",
+          icon: "fas fa-address-card",
+          link: "/contact",
+          index: 4,
+        },
+      ],
     };
   },
+  computed: {
+    navActive: {
+      get() {
+        return this.$store.state.navActive;
+      },
+      set(val) {
+        this.$store.commit("SET_NAVBAR_ACTIVE", val);
+      },
+    },
+  },
   methods: {
-    menuBackgroundAnim(index) {
-      let navList = this.$store.state.navList;
-      this.$store.state.lastVisitedPage.classList.remove("active");
-      this.$store.state.lastVisitedPage = navList.children[index + 1];
-      navList.children[index + 1].classList.add("active");
-      navList.children[index + 1].children[0].classList.add("active");
-      navList.children[0].style.transform = `translateY(${
-        index * this.$store.state.menuListHeight
-      }px)`;
+    setActive() {
+      this.navActive = this.$route.name;
+      this.setStyle();
+    },
+    setStyle() {
+      let index = 0;
+      for (let itter of this.navItem) {
+        if (itter.title + "Page" == this.navActive) {
+          index = itter.index;
+        }
+      }
+
+      let height = this.$refs.activeBack.clientHeight;
+      this.$refs.activeBack.style.transform = `translateY(${index * height}px)`;
     },
   },
   mounted() {
-    this.$store.state.navList = this.$refs.navList;
-    this.$store.state.menuListHeight = this.$refs.size.clientHeight;
-    this.$store.state.lastVisitedPage = this.$refs.size.children[0];
-    this.$store.state.lastVisitedPage.classList.add("active");
+    this.navActive = this.$route.name;
+    this.setStyle();
   },
 };
 </script>
