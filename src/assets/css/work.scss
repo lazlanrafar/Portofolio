@@ -1,6 +1,6 @@
 .work-page {
   .title {
-    margin-top: 5rem;
+    margin-top: 3rem;
     text-align: center;
     font-family: "Montserrat", sans-serif;
     color: var(--red-color);
@@ -26,9 +26,13 @@
           display: none;
         }
 
+        .description {
+          font-size: 1vw;
+        }
         .tools {
           margin-top: 2rem;
           font-weight: 600;
+          font-size: 1vw;
 
           span {
             font-weight: 400;
@@ -66,7 +70,7 @@
       }
 
       .img {
-        max-width: 40%;
+        max-width: 50%;
         overflow: hidden;
         border-radius: 10px;
 
@@ -100,6 +104,9 @@
             margin-top: 1rem;
           }
 
+          p {
+            font-size: 1rem !important;
+          }
           .mobile-img {
             display: block;
             margin-top: 1rem;

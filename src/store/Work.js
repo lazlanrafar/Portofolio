@@ -3,19 +3,18 @@ const Work = {
     loadingWork: false,
     reports: [
       {
-        title: "Web Application for Online Consultation (Kliniku)",
+        title: "Jurnal Ilmu Administrasi Public - UNISRI",
         description:
-          "Kliniku is an online consultation platform where people can fill in an online form about their health issue to send for a doctor. The doctor can respond and give them medical advice.",
+          "This is my first project to make UI together with the team using figma, this is a website that contains personal scientific journals from UNISRI university",
         source: "https://github.com/GunawanAhmad/Sisfo-Klinik-Full-Stack",
-        link: "",
-        codeTools: ["VueJS", "MongoDB", "NodeJs", "ExpressJS"],
-        design: "Design by Faris Azizy",
-        img: "https://gunawanahmad.github.io/img/kliniku.5888c118.svg",
+        link: "https://www.figma.com/file/PkrvcVMMNDPHSZbdcHYj4Q/JIAP---Universitas-Slamet-Riyadi?node-id=0%3A1",
+        codeTools: ["Figma"],
+        design: "Design by Me & @alzdesco",
+
+        img: "https://i.ibb.co/8YHzrDh/jiap.png",
         key: 1,
       },
     ],
-    category: ["All", "Figma", "Vue.js", "React.js", "Laravel"],
-    report: [],
   },
   mutations: {
     SET_LOADING_WORK(state, payload) {

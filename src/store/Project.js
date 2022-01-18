@@ -4,41 +4,31 @@ const Project = {
     reports: [
       {
         id: 1,
-        title: "Ocean Paradise",
-        image:
-          "https://cdn.dribbble.com/users/108671/screenshots/17251219/media/af82faab21379be7845f9fc1bda78817.jpg?compress=1&resize=1200x900&vertical=top",
+        title: "Ocean Paradise - Backround Video Website",
+        created: "Dec 23, 2021",
+        image: "https://i.ibb.co/z7KNjYm/oceanparadise-vercel-app.png",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci, fuga tempora praesentium, suscipit, dignissimos molestias perferendis quo amet quaerat quia dicta? Officia, reiciendis laborum harum eveniet aut suscipit pariatur!",
-        link: "http://google.com",
-        sourceCode: "http://google.com",
+          "this is a website learning from https://www.youtube.com/watch?v=aHH2pHnWWig",
+        designer: "Online Tutorial",
+        linkDesigner:
+          "https://www.youtube.com/channel/UCbwXnUipZsLfUckBPsC7Jog",
+        link: "https://oceanparadise.vercel.app/",
+        sourceCode: "https://github.com/lazlanrafar/ocean-paradise",
         category: ["Vue.js"],
-        images: [
-          "https://awsimages.detik.net.id/community/media/visual/2020/07/13/manga-naruto-1_43.webp",
-        ],
       },
       {
         id: 2,
-        title: "Ocean Paradise",
-        logo: "https://cdn2.unrealengine.com/egs-suchartgeniusartistsimulator-voolgi-ic1-400x146-5e9db06d7b87.png?h=270&resize=1&w=480",
-        image:
-          "https://cdn.dribbble.com/users/4898370/screenshots/17253512/media/ed336ab457542828fd51a53267fef1ee.png?compress=1&resize=1200x900&vertical=top",
+        title: "Moonlight - Parralax Website",
+        created: "Dec 24, 2021",
+        image: "https://i.ibb.co/R3LkVyz/moonllight-vercel-app.png",
         description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci, fuga tempora praesentium, suscipit, dignissimos molestias perferendis quo amet quaerat quia dicta? Officia, reiciendis laborum harum eveniet aut suscipit pariatur!",
-        link: "http://google.com",
-        sourceCode: "http://google.com",
-        category: ["Vue.js", "Figma"],
-      },
-      {
-        id: 3,
-        title: "Basic UX - design resources for InVision Studio",
-        image:
-          "https://cdn.dribbble.com/users/2577653/screenshots/17247517/media/65e505ceb40e1c2a599f99d95d704daf.png?compress=1&resize=1200x900&vertical=top",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci, fuga tempora praesentium, suscipit, dignissimos molestias perferendis quo amet quaerat quia dicta? Officia, reiciendis laborum harum eveniet aut suscipit pariatur!",
-        link: "http://google.com",
-        sourceCode: "http://google.com",
-
-        category: ["Figma"],
+          "this is a website learning from https://www.youtube.com/watch?v=4OiNwNWHGyo",
+        designer: "Online Tutorial",
+        linkDesigner:
+          "https://www.youtube.com/channel/UCbwXnUipZsLfUckBPsC7Jog",
+        link: "https://moonllight.vercel.app/",
+        sourceCode: "https://github.com/lazlanrafar/moonllight",
+        category: ["Vue.js"],
       },
     ],
     category: ["All", "Figma", "Vue.js", "React.js", "Laravel"],

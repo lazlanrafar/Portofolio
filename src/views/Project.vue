@@ -28,7 +28,7 @@
           <div class="content">
             <div class="text">
               <p class="title">{{ project.title }}</p>
-              <p class="design">Design by :</p>
+              <p class="design">Design by : {{ project.designer }}</p>
             </div>
           </div>
         </div>
@@ -46,15 +46,16 @@ export default {
   data() {
     return {
       isActive: "All",
+      category: ["All"],
     };
   },
   computed: {
     reports() {
       return this.$store.state.Project.reports;
     },
-    category() {
-      return this.$store.state.Project.category;
-    },
+    // category() {
+    //   return this.$store.state.Project.category;
+    // },
   },
   methods: {
     setCategory(item) {
@@ -76,6 +77,13 @@ export default {
   },
   created() {
     this.projects = this.reports;
+    for (const iterator of this.reports) {
+      for (const item of iterator.category) {
+        if (this.category.indexOf(item) === -1) {
+          this.category.push(item);
+        }
+      }
+    }
   },
 };
 </script>

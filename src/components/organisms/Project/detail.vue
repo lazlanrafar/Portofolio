@@ -15,10 +15,16 @@
             </ul>
             <br />
             <p class="sub">Design by</p>
-            <p class="designer">L Azlan Rafar</p>
+            <p class="designer">
+              <a
+                :href="detail.linkDesigner"
+                style="text-decoration: none; color: white"
+                >{{ detail.designer }}</a
+              >
+            </p>
             <br />
             <p class="sub">Created at</p>
-            <p class="created">21 December 2021</p>
+            <p class="created">{{ detail.created }}</p>
             <br />
             <p class="sub">Link Preview</p>
             <a :href="detail.link" target="_blank">{{ detail.link }}</a>
