@@ -40,7 +40,7 @@
         }
 
         .links {
-          margin-top: 3rem;
+          margin-top: 2rem;
 
           a {
             background-color: var(--red-color);
@@ -81,6 +81,7 @@
 
 @media only screen and (max-width: 1024px) {
   .work-page {
+    padding-bottom: var(--size-navbar-mobile);
     .work-list {
       margin-top: 0;
       width: 100%;

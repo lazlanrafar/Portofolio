@@ -1,49 +1,52 @@
 <template>
-  <div class="container">
-    <h1 class="title">{{ detail.title }}</h1>
-    <div class="breadcrumb">
-      <router-link to="/project">Project</router-link>
-      <span class="active"> / {{ detail.title }}</span>
-    </div>
-    <div class="mini-nav">
-      <p
-        v-bind:class="{ active: 'Overview' == isActive }"
-        @click="setIsActive('Overview')"
-      >
-        Overview
-      </p>
-      <p
-        v-bind:class="{ active: 'Deskripsi' == isActive }"
-        @click="setIsActive('Deskripsi')"
-      >
-        Deskripsi
-      </p>
-    </div>
-    <div class="d-flex">
-      <div class="left">
-        <div v-if="isActive == 'Overview'">
-          <img :src="detail.image" alt="" />
-        </div>
-        <div v-if="isActive == 'Deskripsi'">
-          <p>
-            {{ detail.description }}
-          </p>
-        </div>
-      </div>
-      <div class="right">
-        <div class="card">
-          <div class="logo">
-            <img :src="detail.logo" alt="" />
+  <div class="backround" :style="{ backgroundImage: `url(${detail.image})` }">
+    <div class="detail-project">
+      <div class="container">
+        <div class="d-flex">
+          <div class="left">
+            <p class="sub">Case Study</p>
+            <h1 class="title">{{ detail.title }}</h1>
+            <br />
+            <p class="sub">Category</p>
+            <ul>
+              <li v-for="(item, index) in detail.category" :key="index">
+                {{ item }}
+              </li>
+            </ul>
+            <br />
+            <p class="sub">Design by</p>
+            <p class="designer">L Azlan Rafar</p>
+            <br />
+            <p class="sub">Created at</p>
+            <p class="created">21 December 2021</p>
+            <br />
+            <p class="sub">Link Preview</p>
+            <a :href="detail.link" target="_blank">{{ detail.link }}</a>
+            <br /><br />
+            <p class="sub">Source Code</p>
+            <a :href="detail.sourceCode" target="_blank">{{
+              detail.sourceCode
+            }}</a>
           </div>
-          <div class="category">
-            <p v-for="item in detail.category" :key="item">{{ item }}</p>
-          </div>
-          <p class="created">Created at 01-01-2022</p>
-          <div class="action">
-            <a :href="detail.link" class="preview" target="_blank">Preview</a>
-            <a :href="detail.sourceCode" class="source-code" target="_blank"
-              >Source Code</a
-            >
+          <div class="right">
+            <p class="sub">Description</p>
+            <p class="desc">
+              {{ detail.description }}
+            </p>
+            <br />
+            <img
+              class="image"
+              v-for="(image, i) in images"
+              v-bind:key="i"
+              :src="image"
+              @click="index = i"
+            />
+            <vue-gallery-slideshow
+              :images="images"
+              :index="index"
+              class="imageslideshow"
+              @close="index = null"
+            ></vue-gallery-slideshow>
           </div>
         </div>
       </div>
@@ -52,12 +55,23 @@
 </template>
 
 <script>
+import VueGallerySlideshow from "vue-gallery-slideshow";
 export default {
   name: "detailProject",
+  components: {
+    VueGallerySlideshow,
+  },
   data() {
     return {
-      detail: [],
-      isActive: "Overview",
+      detail: "",
+      index: null,
+      images: [],
+      swiperOption: {
+        pagination: {
+          el: ".swiper-pagination",
+          dynamicBullets: true,
+        },
+      },
     };
   },
   computed: {
@@ -65,151 +79,173 @@ export default {
       return this.$store.state.Project.reports;
     },
   },
-  methods: {
-    setIsActive(param) {
-      this.isActive = param;
-    },
-  },
   mounted() {
     for (const itter of this.reports) {
       if (itter.id == this.$route.params.id) {
         this.detail = itter;
+        this.images.push(itter.image);
+        const [i] = itter.images;
+        this.images.push(i);
       }
     }
+    console.log(this.images);
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.backround {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+}
+
+.detail-project {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), var(--main-color));
+  height: 100%;
+  padding-top: 1vw !important;
+}
+.imageslideshow {
+  img {
+    margin-top: 10vh !important;
+  }
+}
 .container {
   width: 90%;
   margin: 5em auto;
   color: #fff;
-
   .d-flex {
-    justify-content: start;
-  }
+    display: flex;
+    justify-content: space-between;
 
-  .title {
-    font-size: 2.3vw;
-    font-weight: 700;
-  }
+    .left {
+      width: 60vw;
 
-  .breadcrumb {
-    font-size: 0.8rem;
-
-    a {
-      color: var(--red-color);
-      text-decoration: none;
-    }
-    .active {
-      color: var(--muted-color);
-    }
-  }
-  .mini-nav {
-    margin: 1.5rem 0;
-
-    p {
-      cursor: pointer;
-      padding-bottom: 5px;
-      display: inline-block;
-      margin-right: 1em;
-      color: #7a7a7a;
-    }
-
-    .active {
-      border-bottom: 1px solid var(--font-color);
-      color: var(--font-color);
-    }
-  }
-
-  .left {
-    width: 60%;
-
-    img {
-      width: 100%;
-      border-radius: 5px;
-    }
-  }
-
-  .right {
-    width: 20%;
-    margin-left: 5em;
-    position: sticky;
-
-    .card {
-      padding: 0.5em;
-      .logo {
-        padding: 1em;
-        img {
-          width: 100%;
-        }
+      p {
+        text-transform: uppercase;
+        font-size: 1vw;
       }
-      .category {
-        margin-top: 0.5em;
-        p {
-          display: inline-block;
-          padding: 0.5em 1em;
-          font-size: 0.8rem;
-          background: #2a2a2a;
-          border-radius: 5px;
-          margin-right: 0.5em;
-        }
+
+      .sub {
+        opacity: 0.5;
+        margin-bottom: 0.5rem;
+        font-size: 0.8vw;
       }
-      .created {
-        font-size: 0.9rem;
-        margin-top: 1em;
+
+      li {
+        list-style: none;
+        text-transform: uppercase;
+        font-size: 1vw;
       }
-      .action {
-        a {
-          display: block;
-          text-decoration: none;
-          text-align: center;
-          margin: 1em 0;
-          border: 1px solid var(--red-color);
-          border-radius: 5px;
-          padding: 0.4em;
-          font-weight: 500;
-        }
-        .preview {
-          color: var(--red-color);
-        }
-        .source-code {
-          color: var(--font-color);
-          background: var(--red-color);
-        }
+
+      a {
+        color: var(--red-color);
+        font-size: 1vw;
+      }
+    }
+
+    .right {
+      margin-left: 2vw;
+      .sub {
+        opacity: 0.5;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        font-size: 0.8vw;
+      }
+      p {
+        font-size: 1vw;
+      }
+      img {
+        display: inline-block;
+        margin-right: 1%;
+        width: calc(97% / 4);
+        cursor: pointer;
       }
     }
   }
 }
 
 @media only screen and (max-width: 1024px) {
-  .d-flex {
-    justify-content: space-between !important;
-  }
-  .title {
-    font-size: 2rem !important;
-  }
-  .right {
-    width: 35% !important;
-    margin: 0 !important;
+  .container {
+    padding-bottom: calc(var(--size-navbar-mobile) + 1rem);
+    .d-flex {
+      display: block;
+      .left {
+        width: 60vw;
+
+        .sub {
+          font-size: 2vw;
+        }
+        p {
+          font-size: 2.5vw;
+        }
+
+        li {
+          font-size: 2.5vw;
+        }
+
+        a {
+          font-size: 2.5vw;
+        }
+      }
+
+      .right {
+        margin-left: 0 !important;
+        margin-top: 2rem;
+        p {
+          font-size: 2.5vw;
+        }
+        .sub {
+          font-size: 2vw;
+        }
+        img {
+          width: calc(100% / 3);
+        }
+      }
+    }
   }
 }
 
 @media only screen and (max-width: 600px) {
   .container {
-    margin: 2rem auto !important;
-  }
-  .d-flex {
-    display: block !important;
-  }
-  .left {
-    width: 100% !important;
-  }
-  .right {
-    width: 100% !important;
-    .logo {
-      padding: 3rem !important;
+    .d-flex {
+      .left {
+        width: 100%;
+
+        h1 {
+          font-size: 7vw;
+        }
+        .sub {
+          font-size: 3vw;
+        }
+        p {
+          font-size: 4vw;
+        }
+
+        li {
+          font-size: 4vw;
+        }
+
+        a {
+          font-size: 4vw;
+        }
+      }
+
+      .right {
+        margin-left: 0 !important;
+        margin-top: 2rem;
+        p {
+          font-size: 4vw;
+        }
+        .sub {
+          font-size: 3vw;
+        }
+        img {
+          width: 100%;
+          margin: 0 !important;
+        }
+      }
     }
   }
 }

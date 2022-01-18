@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     height: 100%;
-    margin-left: 40px;
+    margin-left: 1.5vw;
 
     .title {
       color: var(--font-color);
@@ -15,7 +15,7 @@
     .deks {
       font-size: 1.5vw;
       color: #8d8d8d;
-      margin: -1.5rem 0 1rem 0;
+      margin: -4vw 0 1rem 0 !important;
     }
     .btn-primary {
       padding: 0.7vw 2vw;
@@ -25,29 +25,28 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .deks {
-    font-size: 3vw !important;
-  }
-  .btn-primary {
-    font-size: 2.5vw !important;
+  .container {
+    margin-left: 3vw !important;
+    .deks {
+      font-size: 3vw !important;
+    }
+    .btn-primary {
+      font-size: 2.5vw !important;
+    }
   }
 }
 
 @media only screen and (max-width: 550px) {
   .home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     .container {
       margin-left: 20px !important;
-    }
-    .deks {
-      font-size: 4.5vw !important;
-    }
-    .btn-primary {
-      font-size: 3vw !important;
-      padding: 2vw 5vw !important;
+      .deks {
+        font-size: 4.5vw !important;
+      }
+      .btn-primary {
+        font-size: 3vw !important;
+        padding: 2vw 5vw !important;
+      }
     }
   }
 }

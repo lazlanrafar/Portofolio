@@ -20,7 +20,7 @@
       }
 
       .deks {
-        font-size: 1rem;
+        font-size: 1vw;
       }
     }
     .global {
@@ -35,6 +35,7 @@
 @media only screen and (max-width: 1024px) {
   .about {
     padding-left: 10px;
+    padding-bottom: calc(var(--size-navbar-mobile) + 3rem) !important;
 
     .container {
       display: block;
@@ -48,26 +49,25 @@
     }
   }
   .deks {
-    font-size: 3vw;
+    font-size: 2.7vw !important;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .about {
+    margin-bottom: calc(var(--size-navbar-mobile) + 1rem) !important;
     .text {
       width: 80vw;
       margin-left: 2em !important;
 
       .deks {
-        font-size: 4vw;
+        font-size: 4vw !important;
       }
     }
     .global {
       position: relative;
       font-weight: 500;
       font-size: 1rem;
-      width: 10vw !important;
-      margin-left: -5vw !important;
     }
   }
 }

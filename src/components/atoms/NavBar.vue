@@ -69,9 +69,15 @@ export default {
       get() {
         return this.$store.state.navActive;
       },
-      set(val) {
-        this.$store.commit("SET_NAVBAR_ACTIVE", val);
+      set() {
+        this.$store.commit("SET_NAVBAR_ACTIVE", this.$route.name);
       },
+    },
+  },
+  watch: {
+    navActive(val) {
+      console.log(val);
+      this.setStyle();
     },
   },
   methods: {

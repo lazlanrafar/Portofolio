@@ -18,7 +18,7 @@
         </span>
       </span>
 
-      <i v-if="close" class="code" style="margin-left: 1rem">/h1</i>
+      <i v-if="close" class="code close" style="margin-left: 1rem">/h1</i>
     </h1>
   </div>
 </template>
@@ -108,30 +108,39 @@ h1 div {
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1024px) {
+  h1 {
+    font-size: 9vw !important;
+    line-height: 10vw !important;
+  }
   .eyes {
-    height: 7vw;
-    width: 7vw;
-    border: 2px solid var(--font-color);
+    height: 11vw !important;
+    width: 11vw !important;
+    border: 5px solid var(--font-color) !important;
 
     .pupil {
-      height: 3vw;
-      width: 3vw;
+      height: 5vw !important;
+      width: 5vw !important;
     }
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   h1 {
-    font-size: 7.5vw;
-    line-height: normal;
+    font-size: 9vw !important;
+    line-height: 12vw !important;
+  }
+  .close {
+    display: none;
   }
   .eyes {
-    height: 9vw;
-    width: 9vw;
+    height: 11vw !important;
+    width: 11vw !important;
+    border: 2px solid var(--font-color) !important;
+
     .pupil {
-      height: 4vw;
-      width: 4vw;
+      height: 5vw !important;
+      width: 5vw !important;
     }
   }
 }

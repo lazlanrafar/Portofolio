@@ -10,7 +10,11 @@ const Project = {
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci, fuga tempora praesentium, suscipit, dignissimos molestias perferendis quo amet quaerat quia dicta? Officia, reiciendis laborum harum eveniet aut suscipit pariatur!",
         link: "http://google.com",
+        sourceCode: "http://google.com",
         category: ["Vue.js"],
+        images: [
+          "https://awsimages.detik.net.id/community/media/visual/2020/07/13/manga-naruto-1_43.webp",
+        ],
       },
       {
         id: 2,
@@ -26,39 +30,15 @@ const Project = {
       },
       {
         id: 3,
-        title: "Ocean Paradise",
+        title: "Basic UX - design resources for InVision Studio",
         image:
           "https://cdn.dribbble.com/users/2577653/screenshots/17247517/media/65e505ceb40e1c2a599f99d95d704daf.png?compress=1&resize=1200x900&vertical=top",
         description:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci, fuga tempora praesentium, suscipit, dignissimos molestias perferendis quo amet quaerat quia dicta? Officia, reiciendis laborum harum eveniet aut suscipit pariatur!",
         link: "http://google.com",
-      },
-      {
-        id: 4,
-        title: "Ocean Paradise",
-        image:
-          "https://cdn.dribbble.com/users/2247697/screenshots/17247016/media/f927836e45658fb74bd4105817478679.jpg?compress=1&resize=1200x900&vertical=top",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci, fuga tempora praesentium, suscipit, dignissimos molestias perferendis quo amet quaerat quia dicta? Officia, reiciendis laborum harum eveniet aut suscipit pariatur!",
-        link: "http://google.com",
-      },
-      {
-        id: 4,
-        title: "Ocean Paradise",
-        image:
-          "https://cdn.dribbble.com/users/2247697/screenshots/17247016/media/f927836e45658fb74bd4105817478679.jpg?compress=1&resize=1200x900&vertical=top",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci, fuga tempora praesentium, suscipit, dignissimos molestias perferendis quo amet quaerat quia dicta? Officia, reiciendis laborum harum eveniet aut suscipit pariatur!",
-        link: "http://google.com",
-      },
-      {
-        id: 4,
-        title: "Ocean Paradise",
-        image:
-          "https://cdn.dribbble.com/users/2247697/screenshots/17247016/media/f927836e45658fb74bd4105817478679.jpg?compress=1&resize=1200x900&vertical=top",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam adipisci, fuga tempora praesentium, suscipit, dignissimos molestias perferendis quo amet quaerat quia dicta? Officia, reiciendis laborum harum eveniet aut suscipit pariatur!",
-        link: "http://google.com",
+        sourceCode: "http://google.com",
+
+        category: ["Figma"],
       },
     ],
     category: ["All", "Figma", "Vue.js", "React.js", "Laravel"],

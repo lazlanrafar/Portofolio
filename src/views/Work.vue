@@ -3,15 +3,15 @@
     <header-text text="My Work" class="title"></header-text>
 
     <div class="work-list">
-      <div class="work" v-for="work in myProjects" :key="work.key">
+      <div class="work" v-for="work in reports" :key="work.key">
         <div class="information">
           <span class="code">h1</span>
-          <h2 class="work-number">0{{ work.key }}.</h2>
+          <h1 class="work-number">0{{ work.key }}.</h1>
           <h1 class="work-title">
             {{ work.title }}
             <span class="space"></span>
             <span class="space"></span>
-            <span class="code">/h1</span>
+            <span class="code" style="margin-left: 0.5rem">/h1</span>
           </h1>
           <img :src="work.img" alt="" class="mobile-img" />
           <span class="code">p</span>
@@ -34,7 +34,7 @@
               :href="work.link"
               :class="work.link === '' ? 'disabled' : ''"
             >
-              Visit Now <i class="fas fa-external-link-square-alt"></i>
+              Visit Now
             </a>
           </div>
         </div>
@@ -53,27 +53,13 @@ export default {
     HeaderText: () => import("@/components/atoms/HeaderText"),
   },
   data() {
-    return {
-      isExpand: false,
-      icon: "fas fa-expand",
-      isDetail: false,
-      myProjects: [
-        {
-          title: "Web Application for Online Consultation (Kliniku)",
-          description:
-            "Kliniku is an online consultation platform where people can fill in an online form about their health issue to send for a doctor. The doctor can respond and give them medical advice.",
-          source: "https://github.com/GunawanAhmad/Sisfo-Klinik-Full-Stack",
-          link: "",
-          codeTools: ["VueJS", "MongoDB", "NodeJs", "ExpressJS"],
-          design: "Design by Faris Azizy",
-          img: "https://gunawanahmad.github.io/img/kliniku.5888c118.svg",
-          key: 1,
-        },
-      ],
-    };
+    return {};
   },
-  mounted() {},
-  methods: {},
+  computed: {
+    reports() {
+      return this.$store.state.Work.reports;
+    },
+  },
 };
 </script>
 

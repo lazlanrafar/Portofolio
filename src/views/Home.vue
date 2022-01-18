@@ -13,11 +13,7 @@
           <p>Front-End & Back-End Developer</p>
           <i class="code">/p</i>
         </div>
-        <router-link
-          class="btn-primary"
-          to="/about"
-          @click="menuBackgroundAnim(1)"
-        >
+        <router-link class="btn-primary" to="/about" @click="setNavActive()">
           <span>Contact me!</span>
         </router-link>
       </div>
@@ -32,15 +28,8 @@ export default {
     HomeText: () => import("@/components/organisms/Home/HomeText"),
   },
   methods: {
-    menuBackgroundAnim(index) {
-      let navList = this.$store.state.navList;
-      this.$store.state.lastVisitedPage.classList.remove("active");
-      this.$store.state.lastVisitedPage = navList.children[index + 1];
-      navList.children[index + 1].classList.add("active");
-      navList.children[index + 1].children[0].classList.add("active");
-      navList.children[0].style.transform = `translateY(${
-        index * this.$store.state.menuListHeight
-      }px)`;
+    setNavActive() {
+      this.$store.commit("SET_NAVBAR_ACTIVE", "AboutPage");
     },
   },
 };

@@ -1,18 +1,6 @@
 <template>
   <div class="project-page">
-    <h1 class="title-page">
-      <span class="hov">M</span>
-      <span class="hov">y</span>
-      <span class="space"></span>
-      <span class="hov">P</span>
-      <span class="hov">r</span>
-      <span class="hov">o</span>
-      <span class="hov">j</span>
-      <span class="hov">e</span>
-      <span class="hov">c</span>
-      <span class="hov">t</span>
-      <span class="hov">s</span>
-    </h1>
+    <header-text text="My Project" class="title-page"></header-text>
 
     <ul class="cetegory">
       <li
@@ -30,13 +18,15 @@
         class="card"
         v-for="(project, index) in projects"
         :key="index"
-        :to="{ name: 'Detail Project', params: { id: project.id } }"
+        :to="{ name: 'DetailProject', params: { id: project.id } }"
       >
         <div class="image">
           <img :src="project.image" alt="..." />
           <div class="content">
-            <p class="title">{{ project.title }}</p>
-            <p class="design">Design by :</p>
+            <div class="text">
+              <p class="title">{{ project.title }}</p>
+              <p class="design">Design by :</p>
+            </div>
           </div>
         </div>
       </router-link>
@@ -46,10 +36,13 @@
 
 <script>
 export default {
+  name: "ProjectPage",
+  components: {
+    HeaderText: () => import("@/components/atoms/HeaderText"),
+  },
   data() {
     return {
       isActive: "All",
-      projects: [],
     };
   },
   computed: {
@@ -68,8 +61,10 @@ export default {
         this.projects = this.reports;
       } else {
         for (const data of this.reports) {
-          if (data.category == item) {
-            x.push(data);
+          for (let i = 0; i < data.category.length; i++) {
+            if (data.category[i] == item) {
+              x.push(data);
+            }
           }
         }
         this.projects = x;

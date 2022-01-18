@@ -30,7 +30,7 @@ body {
 .top {
   position: fixed;
   top: 20px;
-  left: 80px;
+  left: calc(var(--size-navbar) + 1rem);
   z-index: 8;
   font-size: 24px;
   color: var(--second-color);
@@ -50,7 +50,6 @@ body {
 
 .fa-slash {
   transform: rotateZ(70deg);
-  margin-right: -10px;
 }
 
 .fa-less-than,
@@ -69,7 +68,7 @@ body {
     width: 100%;
     height: 100vh;
     background-color: var(--main-color);
-    padding-left: 70px;
+    padding-left: var(--size-navbar);
     position: relative;
     overflow: auto;
   }

@@ -1,21 +1,13 @@
 <template>
   <div class="contact">
     <div class="container">
-      <div class="text">
-        <div class="code" style="margin-bottom: -15px">h1</div>
-        <h1>
-          <span>C</span>
-          <span>o</span>
-          <span>n</span>
-          <span>t</span>
-          <span>a</span>
-          <span>c</span>
-          <span>t</span>
-          <span class="space"></span>
-          <span>M</span>
-          <span>e</span>
-          <i class="code" style="margin-left: 20px">/h1</i>
-        </h1>
+      <div class="left">
+        <header-text
+          text="Contact Me"
+          close="true"
+          open="true"
+          class="title"
+        ></header-text>
         <div class="deks">
           <div class="code" style="margin-top: -15px">p</div>
           <p style="margin-bottom: 1rem">
@@ -50,9 +42,9 @@
             placeholder="Message"
             class="flex"
           ></textarea>
-          <button type="submit" class="btn-primary">
+          <a type="submit" class="btn-primary">
             <span>Send Message</span>
-          </button>
+          </a>
         </form>
         <div class="code">/form</div>
       </div>
@@ -63,6 +55,9 @@
 <script>
 export default {
   name: "Contact",
+  components: {
+    HeaderText: () => import("@/components/atoms/HeaderText"),
+  },
 };
 </script>
 

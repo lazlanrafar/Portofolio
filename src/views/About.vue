@@ -6,8 +6,8 @@
           text="My,Myself & I"
           class="title"
           open="true"
+          close="true"
         ></header-text>
-        <i class="code">/h1</i>
         <div class="deks">
           <i class="code">p</i>
           <p style="margin-bottom: 1rem">
@@ -37,15 +37,10 @@ export default {
   components: {
     HeaderText: () => import("@/components/atoms/HeaderText"),
   },
-  data() {
-    return {
-      title: "MY, Myself & I",
-    };
-  },
   mounted() {
     const container = this.$refs.skill;
-    var x = window.matchMedia("(max-width: 900px)");
-    let radius = 320;
+    var x = window.matchMedia("(max-width: 600px)");
+    let radius = 350;
 
     if (x.matches) {
       radius = 200;
