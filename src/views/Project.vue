@@ -22,6 +22,9 @@
       >
         <div class="image">
           <img :src="project.image" alt="..." />
+          <div class="multiple" v-if="project.images">
+            <i class="fas fa-clone"></i>
+          </div>
           <div class="content">
             <div class="text">
               <p class="title">{{ project.title }}</p>

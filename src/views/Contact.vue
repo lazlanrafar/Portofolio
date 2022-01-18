@@ -48,6 +48,16 @@
         </form>
         <div class="code">/form</div>
       </div>
+      <div class="right">
+        <ul>
+          <li v-for="(item, index) in socialMedia" :key="index">
+            <a :href="item.link" target="_blank">
+              <i :class="item.icon"></i>
+              <span>{{ item.username }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -57,6 +67,27 @@ export default {
   name: "Contact",
   components: {
     HeaderText: () => import("@/components/atoms/HeaderText"),
+  },
+  data() {
+    return {
+      socialMedia: [
+        {
+          icon: "fab fa-instagram",
+          username: "lazlanrafar",
+          link: "https://www.instagram.com/lazlanrafar/",
+        },
+        {
+          icon: "fab fa-github",
+          username: "lazlanrafar",
+          link: "https://github.com/lazlanrafar",
+        },
+        {
+          icon: "fab fa-twitter",
+          username: "lazlanrafar",
+          link: "https://twitter.com/lazlanrafar",
+        },
+      ],
+    };
   },
 };
 </script>
