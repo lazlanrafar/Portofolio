@@ -40,6 +40,15 @@
         </div>
         <div class="img">
           <img :src="work.img" alt="" />
+          <div class="visit">
+            <a
+              target="_blank"
+              :href="work.link"
+              :class="work.link === '' ? 'disabled' : ''"
+            >
+              Visit Now
+            </a>
+          </div>
         </div>
       </div>
     </div>

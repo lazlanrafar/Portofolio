@@ -25,7 +25,7 @@
 export default {
   name: "Home",
   components: {
-    HomeText: () => import("@/components/organisms/Home/HomeText"),
+    HomeText: () => import("@/components/atoms/HomeText"),
   },
   methods: {
     setNavActive() {

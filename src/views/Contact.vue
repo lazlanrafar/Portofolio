@@ -18,11 +18,11 @@
           <i class="code" style="top: -20px">/p</i>
         </div>
         <div class="code" style="margin-top: -20px">form</div>
-        <form action="" autocomplete="off">
+        <form action="mailto:lazlanrafar@gmail.com" autocomplete="off">
           <div class="flex">
             <input type="text" name="name" placeholder="Name" class="double" />
             <input
-              type="text"
+              type="email"
               name="email"
               placeholder="Email"
               class="double"
@@ -42,7 +42,11 @@
             placeholder="Message"
             class="flex"
           ></textarea>
-          <a type="submit" class="btn-primary">
+          <a
+            type="submit"
+            onclick="location.href='mailto:lazlanrafar@gmail.com';"
+            class="btn-primary"
+          >
             <span>Send Message</span>
           </a>
         </form>
@@ -52,7 +56,7 @@
         <ul>
           <li v-for="(item, index) in socialMedia" :key="index">
             <a :href="item.link" target="_blank">
-              <i :class="item.icon"></i>
+              <box-icon :name="item.icon" type="logo"></box-icon>
               <span>{{ item.username }}</span>
             </a>
           </li>
@@ -72,17 +76,22 @@ export default {
     return {
       socialMedia: [
         {
-          icon: "fab fa-instagram",
+          icon: "gmail",
+          username: "lazlanrafar@gmail.com",
+          link: "mailto:lazlanrafar@gmail.com",
+        },
+        {
+          icon: "instagram-alt",
           username: "lazlanrafar",
           link: "https://www.instagram.com/lazlanrafar/",
         },
         {
-          icon: "fab fa-github",
+          icon: "github",
           username: "lazlanrafar",
           link: "https://github.com/lazlanrafar",
         },
         {
-          icon: "fab fa-twitter",
+          icon: "twitter",
           username: "lazlanrafar",
           link: "https://twitter.com/lazlanrafar",
         },

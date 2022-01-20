@@ -1,60 +1,52 @@
 <template>
-  <div class="backround" :style="{ backgroundImage: `url(${detail.image})` }">
-    <div class="detail-project">
-      <div class="container">
-        <div class="d-flex">
-          <div class="left">
-            <p class="sub">Case Study</p>
-            <h1 class="title">{{ detail.title }}</h1>
-            <br />
-            <p class="sub">Category</p>
-            <ul>
-              <li v-for="(item, index) in detail.category" :key="index">
-                {{ item }}
-              </li>
-            </ul>
-            <br />
-            <p class="sub">Design by</p>
-            <p class="designer">
-              <a
-                :href="detail.linkDesigner"
-                style="text-decoration: none; color: white"
-                >{{ detail.designer }}</a
-              >
-            </p>
-            <br />
-            <p class="sub">Created at</p>
-            <p class="created">{{ detail.created }}</p>
-            <br />
-            <p class="sub">Link Preview</p>
-            <a :href="detail.link" target="_blank">{{ detail.link }}</a>
-            <br /><br />
-            <p class="sub">Source Code</p>
-            <a :href="detail.sourceCode" target="_blank">{{
-              detail.sourceCode
-            }}</a>
-          </div>
-          <div class="right">
-            <p class="sub">Description</p>
-            <p class="desc">
-              {{ detail.description }}
-            </p>
-            <br />
-            <img
-              class="image"
-              v-for="(image, i) in images"
-              v-bind:key="i"
-              :src="image"
-              @click="index = i"
-            />
-            <vue-gallery-slideshow
-              :images="images"
-              :index="index"
-              class="imageslideshow"
-              @close="index = null"
-            ></vue-gallery-slideshow>
-          </div>
-        </div>
+  <div class="container">
+    <div class="d-flex">
+      <div class="left">
+        <p class="sub">Case Study</p>
+        <h1 class="title">{{ detail.title }}</h1>
+        <br />
+        <p class="sub">Category</p>
+        <ul>
+          <li v-for="(item, index) in detail.category" :key="index">
+            {{ item }}
+          </li>
+        </ul>
+        <br />
+        <p class="sub">Design by</p>
+        <p class="designer">
+          <a :href="detail.linkDesigner" style="text-decoration: none">{{
+            detail.designer
+          }}</a>
+        </p>
+        <br />
+        <p class="sub">Created at</p>
+        <p class="created">{{ detail.created }}</p>
+        <br />
+        <p class="sub">Link Preview</p>
+        <a :href="detail.link" target="_blank">{{ detail.link }}</a>
+        <br /><br />
+        <p class="sub">Source Code</p>
+        <a :href="detail.sourceCode" target="_blank">{{ detail.sourceCode }}</a>
+      </div>
+      <div class="right">
+        <p class="sub">Description</p>
+        <p class="desc">
+          {{ detail.description }}
+        </p>
+        <br />
+        <img
+          class="image"
+          v-for="(image, i) in images"
+          v-bind:key="i"
+          :src="image"
+          @click="index = i"
+        />
+        <vue-gallery-slideshow
+          :images="images"
+          :index="index"
+          class="imageslideshow"
+          @close="index = null"
+        ></vue-gallery-slideshow>
       </div>
     </div>
   </div>
@@ -100,27 +92,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.backround {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 100%;
-}
-
-.detail-project {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), var(--main-color));
-  height: 100%;
-  padding-top: 1vw !important;
-}
-.imageslideshow {
-  img {
-    margin-top: 10vh !important;
-  }
-}
 .container {
   width: 90%;
   margin: 5em auto;
-  color: #fff;
+  color: var(--font-color);
   .d-flex {
     display: flex;
     justify-content: space-between;
@@ -146,7 +121,7 @@ export default {
       }
 
       a {
-        color: var(--red-color);
+        color: var(--font-color);
         font-size: 1vw;
       }
     }

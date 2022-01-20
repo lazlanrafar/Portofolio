@@ -19,7 +19,7 @@
 
       .information {
         width: 40%;
-        color: var(--font-color);
+        color: var(--second-color);
 
         .mobile-img {
           height: 100%;
@@ -48,16 +48,15 @@
           margin-top: 2rem;
 
           a {
-            background-color: var(--red-color);
+            background-color: var(--second-color);
             padding: 0.5rem 1rem;
-            color: var(--font-color);
-            margin-right: 1rem;
+            color: var(--main-color);
             text-decoration: none;
             border-radius: 5px;
-            border: 1px solid transparent;
+            opacity: 0.9;
 
             &:hover {
-              font-weight: 600;
+              opacity: 1;
             }
           }
           a.disabled {
@@ -71,10 +70,44 @@
       .img {
         width: 35%;
         height: auto;
+        position: relative;
+        overflow: hidden;
         border-radius: 10px;
 
         img {
+          transition: all 0.3s;
+          border-radius: 10px;
           width: 100%;
+        }
+
+        .visit {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 70%;
+          left: 0;
+          display: none;
+
+          a {
+            text-decoration: none;
+            color: var(--main-color);
+            background-color: var(--second-color);
+            height: 100px;
+            width: 100px;
+            font-weight: 500;
+            padding: 0.7rem 2rem;
+          }
+        }
+
+        &:hover {
+          border: 4px solid var(--second-color);
+          img {
+            opacity: 0.5;
+            transform: scale(1.2);
+          }
+          .visit {
+            display: block;
+          }
         }
       }
     }

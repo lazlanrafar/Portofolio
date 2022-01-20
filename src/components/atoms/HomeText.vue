@@ -47,6 +47,10 @@ h1 {
   letter-spacing: 2px;
   font-size: 5vw;
   line-height: 7vw;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  cursor: text;
 
   .letter {
     width: auto;
@@ -54,7 +58,7 @@ h1 {
     display: inline-block;
 
     &:hover {
-      transform: rotateZ(-10deg) scale(1.2);
+      animation: spanhover linear 1s;
     }
   }
   .space {
@@ -70,7 +74,7 @@ h1 div {
 .eyes {
   height: 5vw;
   width: 5vw;
-  border: 4px solid var(--font-color);
+  border: 4px solid var(--second-color);
   border-radius: 50%;
   position: relative;
   animation: eye 2s infinite;
@@ -82,14 +86,54 @@ h1 div {
     height: 2.5vw;
     width: 2.5vw;
     border-radius: 50%;
-    background: var(--font-color);
+    background: var(--second-color);
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    .light {
+      background-color: var(--main-color);
+      height: 0.2em;
+      width: 0.2em;
+      border-radius: 50%;
+      position: absolute;
+      left: 15%;
+      top: 15%;
+      transform: translate(-10%, -10%);
+    }
   }
 }
 
+@keyframes spanhover {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
 @keyframes eye {
   0% {
     transform: translateY(30%) scaleY(1);

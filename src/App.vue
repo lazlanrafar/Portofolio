@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <div class="view">
+    <div class="view" ref="view">
       <div class="symbols">
-        <div class="top">
-          <i class="fas fa-less-than"></i>
-        </div>
-        <div class="bottom">
-          <i class="fas fa-slash"></i>
-          <i class="fas fa-greater-than"></i>
-        </div>
+        <div class="top">&lt;</div>
+        <div class="bottom">/&gt;</div>
       </div>
 
-      <router-view />
+      <transition name="fade" mode="out-in" class="route">
+        <keep-alive>
+          <router-view />
+        </keep-alive>
+      </transition>
+    </div>
+    <div class="trans-back" ref="transition">
+      <p>Let me think &#129300;</p>
+      <div class="loadbar">
+        <div class="progress"></div>
+      </div>
     </div>
     <div>
       <nav-bar></nav-bar>
@@ -23,7 +28,23 @@
 export default {
   name: "App",
   components: {
-    NavBar: () => import("@/components/atoms/NavBar.vue"),
+    NavBar: () => import("@/components/atoms/Nav.vue"),
+  },
+  computed: {
+    LoadingApp() {
+      return this.$store.state.App.LoadingApp;
+    },
+  },
+  watch: {
+    LoadingApp(val) {
+      if (val) {
+        this.$refs.view.style.opacity = `0`;
+        this.$refs.transition.style.transform = `translateX(0)`;
+      } else {
+        this.$refs.view.style.opacity = `1`;
+        this.$refs.transition.style.transform = `translateX(100%)`;
+      }
+    },
   },
 };
 </script>

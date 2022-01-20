@@ -28,10 +28,9 @@ const Project = {
           "https://www.youtube.com/channel/UCbwXnUipZsLfUckBPsC7Jog",
         link: "https://moonllight.vercel.app/",
         sourceCode: "https://github.com/lazlanrafar/moonllight",
-        category: ["Vue.js"],
+        category: ["Vue.js", "Tailwind"],
       },
     ],
-    category: ["All", "Figma", "Vue.js", "React.js", "Laravel"],
     report: [],
   },
   mutations: {

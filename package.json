@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "boxicons": "^2.1.1",
     "core-js": "^3.6.5",
     "TagCloud": "^2.2.0",
     "vue": "^2.6.11",

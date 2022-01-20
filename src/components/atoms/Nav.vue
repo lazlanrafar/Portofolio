@@ -12,12 +12,17 @@
         <div
           v-for="(item, index) in navItem"
           :key="index"
-          class="list"
+          :class="{ list: true, active: item.color == 'black' }"
           :id="{ refNavItem: index == 0 }"
-          @click="setActive(index)"
+          @click="setStyle()"
         >
           <router-link :to="item.link" :data-content="item.title">
-            <i :class="item.icon"></i>
+            <box-icon
+              :name="item.icon"
+              type="solid"
+              :color="item.color"
+              class="icon"
+            ></box-icon>
           </router-link>
         </div>
       </div>
@@ -28,77 +33,66 @@
 <script>
 export default {
   name: "NavBar",
+
   data() {
     return {
       navItem: [
         {
           title: "Home",
-          icon: "fas fa-home",
+          icon: "home",
           link: "/",
-          index: 0,
+          color: "",
         },
         {
           title: "About",
-          icon: "fas fa-user",
+          icon: "user",
           link: "/about",
-          index: 1,
+          color: "",
         },
         {
           title: "Work",
-          icon: "fas fa-project-diagram",
+          icon: "bowl-rice",
           link: "/work",
-          index: 2,
+          color: "",
         },
         {
           title: "Project",
-          icon: "fas fa-mug-hot",
+          icon: "coffee",
           link: "/project",
-          index: 3,
+          color: "",
         },
         {
           title: "Contact",
-          icon: "fas fa-address-card",
+          icon: "phone",
           link: "/contact",
-          index: 4,
+          color: "",
         },
       ],
     };
   },
-  computed: {
-    navActive: {
-      get() {
-        return this.$store.state.navActive;
-      },
-      set() {
-        this.$store.commit("SET_NAVBAR_ACTIVE", this.$route.name);
-      },
-    },
-  },
-  watch: {
-    navActive(val) {
-      console.log(val);
-      this.setStyle();
-    },
-  },
   methods: {
-    setActive() {
-      this.navActive = this.$route.name;
-      this.setStyle();
-    },
     setStyle() {
       let index = 0;
-      for (let itter of this.navItem) {
-        if (itter.title + "Page" == this.navActive) {
-          index = itter.index;
+      for (let data of this.navItem) {
+        data.color = "white";
+      }
+      for (let [i, itter] of this.navItem.entries()) {
+        if (itter.title + "Page" == this.$route.name) {
+          index = i;
+          itter.color = "black";
         }
       }
 
       let height = this.$refs.activeBack.clientHeight;
       this.$refs.activeBack.style.transform = `translateY(${index * height}px)`;
+
+      this.$store.commit("SET_LOADING_APP", true);
+      setTimeout(() => {
+        this.$store.commit("SET_LOADING_APP", false);
+      }, 1500);
     },
   },
   mounted() {
-    this.navActive = this.$route.name;
     this.setStyle();
   },
 };
