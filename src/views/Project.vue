@@ -15,21 +15,21 @@
 
     <div class="wrapper">
       <router-link
-        class="card"
         v-for="(project, index) in projects"
         :key="index"
+        class="project-item"
         :to="{ name: 'DetailProject', params: { id: project.id } }"
       >
-        <div class="image">
-          <img :src="project.image" alt="..." />
-          <div class="multiple" v-if="project.images">
-            <i class="fas fa-clone"></i>
-          </div>
-          <div class="content">
-            <div class="text">
-              <p class="title">{{ project.title }}</p>
-              <p class="design">Design by : {{ project.designer }}</p>
-            </div>
+        <div
+          class="backround"
+          :style="{ backgroundImage: `url(${project.image})` }"
+        ></div>
+
+        <div class="content">
+          <p class="no">0{{ index + 1 }}/</p>
+          <div class="text">
+            <p class="title">{{ project.title }}</p>
+            <p class="design">Design by : {{ project.designer }}</p>
           </div>
         </div>
       </router-link>
