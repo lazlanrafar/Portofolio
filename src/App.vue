@@ -13,7 +13,7 @@
       </transition>
     </div>
     <div class="trans-back" ref="transition">
-      <p>Let me think &#129300;</p>
+      <p>Latoe is thinking &#129300;</p>
       <div class="loadbar">
         <div class="progress"></div>
       </div>
