@@ -9,9 +9,13 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "@tailwindcss/postcss7-compat": "^2.2.17",
+    "TagCloud": "^2.2.0",
+    "autoprefixer": "^9",
     "boxicons": "^2.1.1",
     "core-js": "^3.6.5",
-    "TagCloud": "^2.2.0",
+    "postcss": "^7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "vue": "^2.6.11",
     "vue-gallery-slideshow": "^1.5.2",
     "vue-router": "^3.5.3",
@@ -27,6 +31,7 @@
     "node-sass": "^6.0.1",
     "sass": "~1.32.0",
     "sass-loader": "^10.2.0",
+    "vue-cli-plugin-tailwind": "~2.2.18",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

@@ -5,7 +5,7 @@
       <span
         v-for="(letter, index) in text"
         :key="index"
-        :class="{ space: letter.indexOf(' ') >= 0 }"
+        :class="{ 'p-2': letter.indexOf(' ') >= 0 }"
       >
         <div v-if="letter == '*'" class="eyes">
           <div class="pupil">
@@ -13,12 +13,12 @@
           </div>
         </div>
 
-        <span v-else class="letter">
+        <span v-else class="letter font-bold">
           {{ letter }}
         </span>
       </span>
 
-      <i v-if="close" class="code close" style="margin-left: 1rem">/h1</i>
+      <i v-if="close" class="code close ml-3">/h1</i>
     </h1>
   </div>
 </template>
@@ -60,9 +60,6 @@ h1 {
     &:hover {
       animation: spanhover linear 1s;
     }
-  }
-  .space {
-    padding: 5px;
   }
 }
 

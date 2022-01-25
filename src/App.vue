@@ -2,22 +2,30 @@
   <div id="app">
     <div class="view" ref="view">
       <div class="symbols">
-        <div class="top">&lt;</div>
-        <div class="bottom">/&gt;</div>
+        <div class="top">
+          <div class="code">html</div>
+          <div class="code ml-1">body</div>
+        </div>
+        <div class="bottom">
+          <div class="code ml-1">/body</div>
+          <div class="code">/html</div>
+        </div>
       </div>
 
       <transition name="fade" mode="out-in" class="route">
         <keep-alive>
-          <router-view />
+          <div class="md:ml-7">
+            <router-view />
+          </div>
         </keep-alive>
       </transition>
     </div>
-    <div class="trans-back" ref="transition">
+    <!-- <div class="trans-back" ref="transition">
       <p>Latoe is thinking &#129300;</p>
       <div class="loadbar">
         <div class="progress"></div>
       </div>
-    </div>
+    </div> -->
     <div>
       <nav-bar></nav-bar>
     </div>
@@ -28,7 +36,7 @@
 export default {
   name: "App",
   components: {
-    NavBar: () => import("@/components/atoms/Nav.vue"),
+    NavBar: () => import("@/components/Base/Nav.vue"),
   },
   computed: {
     LoadingApp() {

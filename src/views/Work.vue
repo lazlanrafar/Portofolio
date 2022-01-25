@@ -6,8 +6,8 @@
       <div class="work" v-for="work in reports" :key="work.key">
         <div class="information">
           <span class="code">h1</span>
-          <h1 class="work-number">0{{ work.key }}.</h1>
-          <h1 class="work-title">
+          <h1 class="work-number text-4xl font-bold">0{{ work.key }}.</h1>
+          <h1 class="work-title text-4xl font-bold">
             {{ work.title }}
             <span class="space"></span>
             <span class="space"></span>

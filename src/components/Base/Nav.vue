@@ -19,7 +19,6 @@
           <router-link :to="item.link" :data-content="item.title">
             <box-icon
               :name="item.icon"
-              type="solid"
               :color="item.color"
               class="icon"
             ></box-icon>

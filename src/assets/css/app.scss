@@ -21,23 +21,20 @@ body {
   overflow: hidden;
   background-color: var(--main-color);
 }
+
 .symbols {
-  color: var(--second-color);
-  font-family: "La Belle Aurore", cursive;
   z-index: 99;
-  font-weight: 600;
-  font-size: 3rem;
 
   .top {
     position: fixed;
     top: 1rem;
-    left: calc(var(--size-navbar) + 1rem);
+    left: calc(var(--size-navbar) + 2rem);
   }
 
   .bottom {
     position: fixed;
     bottom: 1rem;
-    right: 1rem;
+    left: calc(var(--size-navbar) + 2rem);
   }
 }
 

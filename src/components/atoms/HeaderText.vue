@@ -7,7 +7,7 @@
         :key="index"
         :class="{ space: letter.indexOf(' ') >= 0 }"
       >
-        <span class="letter">
+        <span class="letter font-bold">
           {{ letter }}
         </span>
       </span>
