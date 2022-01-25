@@ -20,12 +20,12 @@
         </keep-alive>
       </transition>
     </div>
-    <!-- <div class="trans-back" ref="transition">
+    <div class="trans-back" ref="transition">
       <p>Latoe is thinking &#129300;</p>
       <div class="loadbar">
         <div class="progress"></div>
       </div>
-    </div> -->
+    </div>
     <div>
       <nav-bar></nav-bar>
     </div>
