@@ -17,13 +17,18 @@
       <router-link
         v-for="(project, index) in projects"
         :key="index"
-        class="project-item"
+        class="project-item relative"
         :to="{ name: 'DetailProject', params: { id: project.id } }"
+        @mouseenter.native="mouseEnter(index)"
+        @mousemove.native="mouseMove"
       >
-        <div
-          class="backround"
-          :style="{ backgroundImage: `url(${project.image})` }"
-        ></div>
+        <img
+          v-if="index == active"
+          :src="project.image"
+          alt=""
+          class="absolute w-72 rounded object-cover object-center"
+          id="imageHover"
+        />
 
         <div class="content">
           <p class="no">0{{ index + 1 }}/</p>
@@ -45,6 +50,7 @@ export default {
   },
   data() {
     return {
+      active: "",
       isActive: "All",
       category: ["All"],
     };
@@ -73,6 +79,16 @@ export default {
         }
         this.projects = x;
       }
+    },
+    mouseEnter(index) {
+      this.active = index;
+    },
+    mouseMove(event) {
+      let imageHover = document.getElementById("imageHover");
+      let x = event.clientX;
+      // let y = event.clientY / (this.active + 5);
+      imageHover.style.left = x + "px";
+      // imageHover.style.top = y + "px";
     },
   },
   created() {

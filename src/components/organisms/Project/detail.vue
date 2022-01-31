@@ -3,7 +3,7 @@
     <div class="d-flex">
       <div class="left">
         <p class="sub">Case Study</p>
-        <h1 class="title">{{ detail.title }}</h1>
+        <h1 class="title font-semibold text-2xl">{{ detail.title }}</h1>
         <br />
         <p class="sub">Category</p>
         <ul>
