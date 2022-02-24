@@ -1,33 +1,38 @@
 <template>
   <div id="app">
-    <div class="view" ref="view">
+    <div>
+      <Welcome />
+    </div>
+
+    <Navbar />
+
+    <div class="view">
       <div class="symbols">
         <div class="top">
           <div class="code">html</div>
-          <div class="code ml-1">body</div>
-        </div>
-        <div class="bottom">
-          <div class="code ml-1">/body</div>
-          <div class="code">/html</div>
+          <div class="code" style="margin-left: 0.5rem">body</div>
         </div>
       </div>
 
       <transition name="fade" mode="out-in" class="route">
         <keep-alive>
-          <div class="md:ml-7">
-            <router-view />
-          </div>
+          <router-view />
         </keep-alive>
       </transition>
+
+      <div class="symbols">
+        <div class="bottom">
+          <div class="code" style="margin-left: 0.5rem">/body</div>
+          <div class="code">/html</div>
+        </div>
+      </div>
     </div>
+
     <div class="trans-back" ref="transition">
-      <p>Latoe is thinking &#129300;</p>
+      <p>Let me think &#129300;</p>
       <div class="loadbar">
         <div class="progress"></div>
       </div>
-    </div>
-    <div>
-      <nav-bar></nav-bar>
     </div>
   </div>
 </template>
@@ -36,27 +41,21 @@
 export default {
   name: "App",
   components: {
-    NavBar: () => import("@/components/Base/Nav.vue"),
+    Navbar: () => import("@/components/Navbar.vue"),
+    Welcome: () => import("@/components/Welcome.vue"),
   },
-  computed: {
-    LoadingApp() {
-      return this.$store.state.App.LoadingApp;
-    },
-  },
-  watch: {
-    LoadingApp(val) {
-      if (val) {
-        this.$refs.view.style.opacity = `0`;
-        this.$refs.transition.style.transform = `translateX(0)`;
-      } else {
-        this.$refs.view.style.opacity = `1`;
-        this.$refs.transition.style.transform = `translateX(100%)`;
-      }
-    },
+  mounted() {
+    this.$store.state.App.bgTranstition = this.$refs.transition;
   },
 };
 </script>
 
 <style lang="scss">
-@import "@/assets/css/app.scss";
+@import "@/assets/scss/app.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap");
+@font-face {
+  font-family: "coolvetica";
+  src: url(./assets/fonts/coolvetica.ttf) format("truetype");
+}
 </style>

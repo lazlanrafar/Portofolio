@@ -1,24 +1,22 @@
 .contact {
   position: relative;
   height: 100%;
-  margin-left: var(--size-navbar);
+  font-family: poppins;
 
   .container {
     display: flex;
     align-items: center;
     justify-content: start;
-    min-height: 100vh;
+    min-height: 100%;
 
     .left {
-      width: 40%;
-      .title {
-        color: var(--red-color);
-      }
+      width: 35%;
 
       .deks {
         font-size: 1rem;
-        color: var(--font-color);
+        color: var(--bfont-color);
       }
+
       form {
         .flex {
           display: flex;
@@ -39,7 +37,7 @@
           padding: 0.7vw;
           border: none;
           outline: none;
-          background: #2b2b2b;
+          background: var(--bfont-color);
           margin-bottom: 0.5rem;
           color: #8d8d8d;
 
@@ -49,21 +47,32 @@
           &:valid,
           &:active {
             border: none;
-            background: #2b2b2b;
+            background: var(--bfont-color);
           }
         }
 
-        .btn-primary {
-          margin-left: auto;
-          font-size: 1rem !important;
-          display: block;
+        .action {
+          display: flex;
+          justify-content: end;
+
+          .btn-message {
+            background-color: var(--bfont-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 15%;
+            padding: 0.3rem;
+            fill: var(--wfont-color);
+            border-radius: 5px;
+          }
         }
       }
     }
 
     .right {
       margin-left: 10vw;
-      border-left: 2px solid var(--font-color);
+      border-left: 2px solid var(--bfont-color);
       padding: 2rem;
       opacity: 0.7;
 
@@ -73,7 +82,7 @@
           margin-bottom: 1rem;
           a {
             text-decoration: none;
-            color: var(--font-color);
+            color: var(--bfont-color);
             font-weight: 500;
             font-size: 1.3rem;
             display: flex;
@@ -94,15 +103,22 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .contact {
-    padding-bottom: var(--size-navbar-mobile) !important;
-  }
   .left {
-    width: 70% !important;
+    width: 80% !important;
+
+    .btn-message {
+      width: 20% !important;
+    }
+  }
+  .container {
+    height: 100%;
+    display: block;
+    position: relative;
   }
   .right {
-    margin-left: 5vw !important;
-
+    width: 30% !important;
+    margin-left: 0 !important;
+    border: none !important;
     a {
       font-size: 1rem !important;
     }
@@ -111,29 +127,27 @@
 
 @media only screen and (max-width: 600px) {
   .contact {
-    margin-bottom: var(--size-navbar-mobile);
+    margin-top: 4rem;
   }
   .container {
     display: block !important;
   }
   .left {
-    width: 95% !important;
+    width: 100% !important;
     input,
     textarea {
       padding: 0.7rem !important;
-    }
-    .btn-primary {
-      padding: 0.7rem 1.5rem;
     }
   }
   .right {
     border: none !important;
     margin: 0 !important;
-    text-align: center;
+    width: 100% !important;
 
-    ul {
+    .sosmed {
+      display: flex !important;
+      justify-content: space-around;
       li {
-        display: inline-block;
         a {
           font-size: 1.5rem !important;
           margin: 1rem;

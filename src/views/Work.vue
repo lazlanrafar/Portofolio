@@ -1,17 +1,19 @@
 <template>
   <div class="work-page">
-    <header-text text="My Work" class="title"></header-text>
+    <div class="title">
+      <header-text text="My Work"></header-text>
+    </div>
 
     <div class="work-list">
       <div class="work" v-for="work in reports" :key="work.key">
         <div class="information">
           <span class="code">h1</span>
-          <h1 class="work-number text-4xl font-bold">0{{ work.key }}.</h1>
-          <h1 class="work-title text-4xl font-bold">
+          <h1 class="work-title">0{{ work.key }}.</h1>
+          <h1 class="work-title">
             {{ work.title }}
-            <span class="space"></span>
-            <span class="space"></span>
-            <span class="code" style="margin-left: 0.5rem">/h1</span>
+            <span class="code" style="margin-left: 0.5rem; font-weight: normal"
+              >/h1</span
+            >
           </h1>
           <img :src="work.img" alt="" class="mobile-img" />
           <span class="code">p</span>
@@ -32,7 +34,7 @@
             <a
               target="_blank"
               :href="work.link"
-              :class="work.link === '' ? 'disabled' : ''"
+              :class="work.link === '' ? 'disabled' : 'links'"
             >
               Visit Now
             </a>
@@ -40,15 +42,6 @@
         </div>
         <div class="img">
           <img :src="work.img" alt="" />
-          <div class="visit">
-            <a
-              target="_blank"
-              :href="work.link"
-              :class="work.link === '' ? 'disabled' : ''"
-            >
-              Visit Now
-            </a>
-          </div>
         </div>
       </div>
     </div>
@@ -59,7 +52,7 @@
 export default {
   name: "WorkPage",
   components: {
-    HeaderText: () => import("@/components/atoms/HeaderText"),
+    HeaderText: () => import("@/components/HeaderText"),
   },
   data() {
     return {};
@@ -73,5 +66,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/css/work.scss";
+@import "@/assets/scss/work.scss";
 </style>

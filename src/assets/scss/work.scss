@@ -1,10 +1,11 @@
 .work-page {
+  min-height: 100vh;
+  position: relative;
+
   .title {
-    margin-top: 3rem;
-    text-align: center;
-    font-family: "Montserrat", sans-serif;
-    color: var(--red-color);
-    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
   }
 
   .work-list {
@@ -16,10 +17,15 @@
       padding: 2rem 0;
       justify-content: space-around;
       align-items: center;
+      font-family: poppins;
 
       .information {
         width: 40%;
-        color: var(--second-color);
+        color: var(--bfont-color);
+
+        .work-title {
+          font-size: 2vw;
+        }
 
         .mobile-img {
           height: 100%;
@@ -30,6 +36,7 @@
         .description {
           font-size: 1vw;
         }
+
         .tools {
           margin-top: 2rem;
           font-weight: 600;
@@ -48,9 +55,9 @@
           margin-top: 2rem;
 
           a {
-            background-color: var(--second-color);
+            background-color: var(--bfont-color);
             padding: 0.5rem 1rem;
-            color: var(--main-color);
+            color: var(--wfont-color);
             text-decoration: none;
             border-radius: 5px;
             opacity: 0.9;
@@ -79,36 +86,6 @@
           border-radius: 10px;
           width: 100%;
         }
-
-        .visit {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 70%;
-          left: 0;
-          display: none;
-
-          a {
-            text-decoration: none;
-            color: var(--main-color);
-            background-color: var(--second-color);
-            height: 100px;
-            width: 100px;
-            font-weight: 500;
-            padding: 0.7rem 2rem;
-          }
-        }
-
-        &:hover {
-          border: 4px solid var(--second-color);
-          img {
-            opacity: 0.5;
-            transform: scale(1.2);
-          }
-          .visit {
-            display: block;
-          }
-        }
       }
     }
   }
@@ -117,6 +94,10 @@
 @media only screen and (max-width: 1024px) {
   .work-page {
     padding-bottom: var(--size-navbar-mobile);
+
+    .title {
+      margin-bottom: 0 !important;
+    }
     .work-list {
       margin-top: 0;
       width: 100%;
@@ -128,10 +109,10 @@
         padding: 3rem 0;
 
         .information {
-          width: 85%;
+          width: 90%;
 
           .work-title {
-            font-size: 1.5rem;
+            font-size: 4vw;
             margin-top: 1rem;
           }
 
@@ -145,6 +126,37 @@
         }
         .img {
           display: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .work-page {
+    .work-list {
+      margin-top: 0 !important;
+
+      .work {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem 0;
+
+        .information {
+          width: 100%;
+
+          .work-title {
+            font-size: 6vw;
+          }
+
+          p {
+            font-size: 1rem !important;
+          }
+
+          .links {
+            margin-top: 1rem !important;
+          }
         }
       }
     }

@@ -1,6 +1,8 @@
 <template>
   <div class="project-page">
-    <header-text text="My Project" class="title-page"></header-text>
+    <div class="title-page">
+      <header-text text="My Project"></header-text>
+    </div>
 
     <ul class="cetegory">
       <li
@@ -13,7 +15,7 @@
       </li>
     </ul>
 
-    <div class="wrapper">
+    <div class="project-list">
       <router-link
         v-for="(project, index) in projects"
         :key="index"
@@ -22,14 +24,6 @@
         @mouseenter.native="mouseEnter(index)"
         @mousemove.native="mouseMove"
       >
-        <img
-          v-if="index == active"
-          :src="project.image"
-          alt=""
-          class="absolute w-72 rounded object-cover object-center"
-          id="imageHover"
-        />
-
         <div class="content">
           <p class="no">0{{ index + 1 }}/</p>
           <div class="text">
@@ -46,7 +40,7 @@
 export default {
   name: "ProjectPage",
   components: {
-    HeaderText: () => import("@/components/atoms/HeaderText"),
+    HeaderText: () => import("@/components/HeaderText"),
   },
   data() {
     return {
@@ -105,5 +99,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/css/project.scss";
+@import "@/assets/scss/project.scss";
 </style>

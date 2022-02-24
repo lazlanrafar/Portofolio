@@ -1,15 +1,17 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import App from "@/store/App";
-import Project from "@/store/Project";
-import Work from "@/store/Work";
+import App from "./App";
+import Work from "./Work";
+import Project from "./Project";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  mutations: {},
+  actions: {},
   modules: {
     App,
-    Project,
     Work,
+    Project,
   },
 });

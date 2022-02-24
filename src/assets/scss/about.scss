@@ -1,7 +1,6 @@
 .about {
   position: relative;
   min-height: 100vh;
-  overflow-x: hidden;
 
   .container {
     display: flex;
@@ -11,8 +10,9 @@
 
     .text {
       margin-left: 40px;
-      font-size: 1.5vw;
+      font-size: 1.3vw;
       color: var(--font-color);
+      font-family: "Poppins", sans-serif;
       width: 25em;
 
       .title {
@@ -27,6 +27,7 @@
       margin: 0 auto;
       font-weight: 600;
       color: var(--font-color);
+      font-family: "Poppins", sans-serif;
       user-select: none;
     }
   }
@@ -34,14 +35,14 @@
 
 @media only screen and (max-width: 1024px) {
   .about {
-    padding-left: 10px;
     padding-bottom: calc(var(--size-navbar-mobile) + 3rem) !important;
 
     .container {
       display: block;
-      margin-top: 3em;
+      margin-top: 6em;
       .text {
         width: 90vw;
+        margin-left: 0 !important;
       }
       .global {
         display: block;

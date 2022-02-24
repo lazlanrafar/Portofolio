@@ -1,9 +1,9 @@
 .project-page {
+  font-family: poppins;
   .title-page {
-    margin-top: 3rem;
-    text-align: center;
-    color: var(--red-color);
-    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
   }
 
   .cetegory {
@@ -12,7 +12,7 @@
     flex-wrap: wrap;
     width: 100%;
     li {
-      color: var(--font-color);
+      color: var(--bfont-color);
       list-style: none;
       margin: 0.5rem;
       padding: 0.5rem 1rem;
@@ -21,13 +21,13 @@
       cursor: pointer;
     }
     .active {
-      background: var(--font-color);
+      background: var(--bfont-color);
       color: #fff;
       font-weight: 500;
     }
   }
 
-  .wrapper {
+  .project-list {
     display: flex;
     flex-direction: column;
     margin: 2rem auto;
@@ -39,17 +39,8 @@
       margin-bottom: 2rem;
       width: 100%;
       height: 10vw;
-      border-bottom: 1px solid var(--font-color);
-      color: var(--font-color);
-
-      .backround {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        opacity: 0;
-        transition: all 0.5s;
-      }
+      border-bottom: 1px solid var(--bfont-color);
+      color: var(--bfont-color);
 
       .content {
         padding: 0 2rem;
@@ -115,6 +106,7 @@
     height: 25vw !important;
 
     .content {
+      padding: 0 !important;
       .no {
         font-size: 1.5rem !important;
       }

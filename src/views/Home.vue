@@ -1,40 +1,33 @@
 <template>
-  <div class="home">
-    <div class="container">
-      <div class="text">
-        <div class="title">
-          <home-text text="Hi," open="true"></home-text>
-          <home-text text="I'm Latoe,"></home-text>
-          <home-text text="Web Devel*per." close="true"></home-text>
-        </div>
-        <br />
-        <div class="deks">
-          <i class="code">p</i>
-          <p>Front-End & Back-End Developer</p>
-          <i class="code">/p</i>
-        </div>
-        <router-link class="btn-primary" to="/about" @click="setNavActive()">
-          <span>Contact me!</span>
-        </router-link>
+  <div id="home">
+    <div>
+      <div class="code">h1</div>
+      <HeaderText text="Hi," home="true" />
+      <HeaderText text="I'm Latoe," home="true" />
+      <HeaderText text="Web Developer" close="true" home="true" />
+      <div class="code">p</div>
+      <p class="desc">Front-End & Back-End Developer</p>
+      <div class="code">/p</div>
+      <br /><br />
+      <div @click="navTransition(1)">
+        <router-link to="/about" class="btn">About me!</router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import TransitionMixin from "@/mixins/transition";
+
 export default {
   name: "Home",
+  mixins: [TransitionMixin],
   components: {
-    HomeText: () => import("@/components/atoms/HomeText"),
-  },
-  methods: {
-    setNavActive() {
-      this.$store.commit("SET_NAVBAR_ACTIVE", "AboutPage");
-    },
+    HeaderText: () => import("@/components/HeaderText.vue"),
   },
 };
 </script>
 
-<style lang="scss" scoped>
-@import "@/assets/css/home.scss";
+<style scoped lang="scss">
+@import "@/assets/scss/home.scss";
 </style>

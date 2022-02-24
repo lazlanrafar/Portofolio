@@ -2,12 +2,8 @@
   <div class="contact">
     <div class="container">
       <div class="left">
-        <header-text
-          text="Contact Me"
-          close="true"
-          open="true"
-          class="title"
-        ></header-text>
+        <div class="code">h1</div>
+        <header-text text="Contact Me" close="true" class="title"></header-text>
         <div class="deks">
           <div class="code" style="margin-top: -15px">p</div>
           <p style="margin-bottom: 1rem">
@@ -42,18 +38,20 @@
             placeholder="Message"
             class="flex"
           ></textarea>
-          <a
-            type="submit"
-            onclick="location.href='mailto:lazlanrafar@gmail.com';"
-            class="btn-primary"
-          >
-            <span>Send Message</span>
-          </a>
+          <div class="action">
+            <a
+              type="submit"
+              onclick="location.href='mailto:lazlanrafar@gmail.com';"
+              class="btn-message"
+            >
+              <box-icon name="paper-plane"></box-icon>
+            </a>
+          </div>
         </form>
         <div class="code">/form</div>
       </div>
       <div class="right">
-        <ul>
+        <ul class="sosmed">
           <li v-for="(item, index) in socialMedia" :key="index">
             <a :href="item.link" target="_blank">
               <box-icon :name="item.icon" type="logo"></box-icon>
@@ -70,7 +68,7 @@
 export default {
   name: "Contact",
   components: {
-    HeaderText: () => import("@/components/atoms/HeaderText"),
+    HeaderText: () => import("@/components/HeaderText"),
   },
   data() {
     return {
@@ -102,5 +100,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/css/contact.scss";
+@import "@/assets/scss/contact.scss";
 </style>

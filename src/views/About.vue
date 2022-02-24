@@ -2,6 +2,7 @@
   <div class="about">
     <div class="container">
       <div class="text">
+        <div class="code">h1</div>
         <header-text
           text="My,Myself & I"
           class="title"
@@ -35,7 +36,7 @@ import TagCloud from "TagCloud";
 export default {
   name: "About",
   components: {
-    HeaderText: () => import("@/components/atoms/HeaderText"),
+    HeaderText: () => import("@/components/HeaderText"),
   },
   mounted() {
     const container = this.$refs.skill;
@@ -72,5 +73,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/css/about.scss";
+@import "@/assets/scss/about.scss";
 </style>
