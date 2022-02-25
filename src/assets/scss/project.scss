@@ -28,45 +28,82 @@
   }
 
   .project-list {
-    display: flex;
-    flex-direction: column;
-    margin: 2rem auto;
-    width: 90%;
-    height: 100%;
+    min-height: 100vh;
+    overflow: hidden;
 
-    .project-item {
-      position: relative;
-      margin-bottom: 2rem;
+    ul {
+      min-height: 50vh;
       width: 100%;
-      height: 10vw;
-      border-bottom: 1px solid var(--bfont-color);
-      color: var(--bfont-color);
 
-      .content {
-        padding: 0 2rem;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
+      li {
+        border-bottom: 1px solid var(--bfont-color);
+        position: relative;
+        z-index: 10;
 
-        .no {
-          font-size: 2.5rem;
-          font-weight: 600;
-          margin-right: 15%;
-        }
+        a {
+          display: block;
+          padding: 4rem 0 2rem 0;
+          color: var(--bfont-color);
+          z-index: 10;
+          text-decoration: none;
 
-        .text {
-          .title {
-            font-size: 1.7rem;
+          span {
+            display: block;
             font-weight: 500;
+            z-index: 10;
+            mix-blend-mode: difference;
+            display: inline-block;
+            position: relative;
+            font-size: 3rem;
+            text-transform: uppercase;
           }
-        }
-      }
 
-      &:hover {
-        .backround {
-          opacity: 0.1;
+          .content {
+            color: var(--bfont-color);
+            padding: 0 2rem;
+            position: relative;
+            mix-blend-mode: difference;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            .no {
+              font-size: 2.5rem;
+              font-weight: 600;
+              margin-right: 15%;
+            }
+
+            .text {
+              .title {
+                font-size: 1.7rem;
+                font-weight: 500;
+              }
+            }
+          }
+
+          .hover-reveal {
+            position: absolute;
+            width: 20vw;
+            height: 12vw;
+            top: 50%;
+            left: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.5s ease-out;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              position: relative;
+              transition: transform 0.4s ease-out;
+            }
+          }
         }
       }
     }
@@ -102,8 +139,12 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .title-page {
+    margin-top: 5rem !important;
+    margin-bottom: 1rem !important;
+  }
   .project-item {
-    height: 25vw !important;
+    height: 30vw !important;
 
     .content {
       padding: 0 !important;

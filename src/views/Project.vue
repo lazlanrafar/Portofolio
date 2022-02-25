@@ -16,22 +16,37 @@
     </ul>
 
     <div class="project-list">
-      <router-link
-        v-for="(project, index) in projects"
-        :key="index"
-        class="project-item relative"
-        :to="{ name: 'DetailProject', params: { id: project.id } }"
-        @mouseenter.native="mouseEnter(index)"
-        @mousemove.native="mouseMove"
-      >
-        <div class="content">
-          <p class="no">0{{ index + 1 }}/</p>
-          <div class="text">
-            <p class="title">{{ project.title }}</p>
-            <p class="design">Design by : {{ project.designer }}</p>
-          </div>
-        </div>
-      </router-link>
+      <ul>
+        <!-- ITEM 01 -->
+        <li
+          v-for="(project, index) in projects"
+          :key="index"
+          class="project-item"
+        >
+          <a
+            :href="project.link"
+            target="_blank"
+            @mousemove="mouseMove($event, index)"
+            @mouseleave="mouseLeave(index)"
+          >
+            <div class="content">
+              <p class="no">0{{ index + 1 }}/</p>
+              <div class="text">
+                <p class="title">{{ project.title }}</p>
+                <p class="design">Design by : {{ project.designer }}</p>
+              </div>
+            </div>
+            <div class="hover-reveal">
+              <img
+                class="hidden-img"
+                width="100%"
+                :src="project.image"
+                alt=""
+              />
+            </div>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -47,6 +62,7 @@ export default {
       active: "",
       isActive: "All",
       category: ["All"],
+      projects: "",
     };
   },
   computed: {
@@ -74,15 +90,28 @@ export default {
         this.projects = x;
       }
     },
-    mouseEnter(index) {
-      this.active = index;
+    mouseMove(event, index) {
+      let linkHoverReveal = document.querySelectorAll(".hover-reveal");
+      let linkImages = document.querySelectorAll(".hidden-img");
+
+      linkHoverReveal[index].style.opacity = 1;
+      linkHoverReveal[
+        index
+      ].style.transform = `translate(-170%, -50% ) rotate(5deg)`;
+      linkImages[index].style.transform = "scale(1, 1)";
+      linkHoverReveal[index].style.left = event.clientX * 1.5 + "px";
+
+      console.log(event, index);
     },
-    mouseMove(event) {
-      let imageHover = document.getElementById("imageHover");
-      let x = event.clientX;
-      // let y = event.clientY / (this.active + 5);
-      imageHover.style.left = x + "px";
-      // imageHover.style.top = y + "px";
+    mouseLeave(index) {
+      let linkHoverReveal = document.querySelectorAll(".hover-reveal");
+      let linkImages = document.querySelectorAll(".hidden-img");
+
+      linkHoverReveal[index].style.opacity = 0;
+      linkHoverReveal[
+        index
+      ].style.transform = `translate(-50%, -50%) rotate(-5deg)`;
+      linkImages[index].style.transform = "scale(0.8, 0.8)";
     },
   },
   created() {
