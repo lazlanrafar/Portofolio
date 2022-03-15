@@ -38,14 +38,38 @@
 </template>
 
 <script>
+import TransitionMixin from "@/mixins/transition";
 export default {
   name: "App",
+  mixins: [TransitionMixin],
   components: {
     Navbar: () => import("@/components/Navbar.vue"),
     Welcome: () => import("@/components/Welcome.vue"),
   },
   mounted() {
     this.$store.state.App.bgTranstition = this.$refs.transition;
+
+    // console.log(this.$route.name);
+    // switch (this.$route.name) {
+    //   case "Home":
+    //     this.navTransition(0);
+    //     break;
+    //   case "About":
+    //     this.navTransition(1);
+    //     break;
+    //   case "Work":
+    //     this.navTransition(2);
+    //     break;
+    //   case "Project":
+    //     this.navTransition(3);
+    //     break;
+    //   case "Contact":
+    //     this.navTransition(4);
+    //     break;
+    //   default:
+    //     this.navTransition(0);
+    //     break;
+    // }
   },
 };
 </script>

@@ -38,6 +38,7 @@ export default {
 }
 h1 {
   font-family: coolvetica;
+  color: var(--bfont-color);
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;

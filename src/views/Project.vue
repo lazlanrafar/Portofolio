@@ -100,8 +100,6 @@ export default {
       ].style.transform = `translate(-170%, -50% ) rotate(5deg)`;
       linkImages[index].style.transform = "scale(1, 1)";
       linkHoverReveal[index].style.left = event.clientX * 1.5 + "px";
-
-      console.log(event, index);
     },
     mouseLeave(index) {
       let linkHoverReveal = document.querySelectorAll(".hover-reveal");
