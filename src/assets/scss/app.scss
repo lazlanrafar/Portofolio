@@ -13,6 +13,15 @@
   --nav-md: 13vh;
 }
 
+::-moz-selection {
+  /* Code for Firefox */
+  background: #999999;
+}
+
+::selection {
+  background: #999999;
+}
+
 #app {
   background-color: var(--main-color);
 }
