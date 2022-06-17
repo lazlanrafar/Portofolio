@@ -41,7 +41,7 @@
           </div>
         </div>
         <div class="img">
-          <img :src="work.img" alt="" />
+          <img :src="require(`@/assets/img/${work.img}`)" alt="" />
         </div>
       </div>
     </div>
