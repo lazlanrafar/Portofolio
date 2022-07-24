@@ -4,7 +4,7 @@
       <div class="text">
         <div class="code">h1</div>
         <header-text
-          text="My,Myself & I"
+          text="Me,Myself & I"
           class="title"
           open="true"
           close="true"
