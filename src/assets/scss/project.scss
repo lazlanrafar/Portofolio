@@ -29,11 +29,12 @@
 
   .project-list {
     min-height: 100vh;
-    overflow: hidden;
+    // overflow-x: hidden;
 
     ul {
       min-height: 50vh;
       width: 100%;
+      list-style: none;
 
       li {
         border-bottom: 1px solid var(--bfont-color);
@@ -70,7 +71,7 @@
             align-items: center;
 
             .no {
-              font-size: 2.5rem;
+              font-size: 2.2rem;
               font-weight: 600;
               margin-right: 15%;
             }

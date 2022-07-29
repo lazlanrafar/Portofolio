@@ -6,7 +6,7 @@
   .container {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     min-height: 100%;
 
     .left {
@@ -53,7 +53,7 @@
 
         .action {
           display: flex;
-          justify-content: end;
+          justify-content: flex-end;
 
           .btn-message {
             background-color: var(--bfont-color);
